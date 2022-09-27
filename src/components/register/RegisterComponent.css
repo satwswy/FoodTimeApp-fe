@@ -1,0 +1,22 @@
+.register-div {
+  position: relative;
+  color: white;
+  height: 100vh;
+  background: linear-gradient(
+    90deg,
+    rgba(77, 59, 37, 1) 0%,
+    rgba(34, 53, 68, 1) 100%
+  );
+}
+
+.register-form-div {
+  background: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 20%;
+  height: 50%;
+}
