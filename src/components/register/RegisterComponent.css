@@ -1,4 +1,4 @@
-.register-div {
+.register {
   height: 100vh;
   background: linear-gradient(
     90deg,
@@ -7,16 +7,16 @@
   );
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-position: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .register-form-div {
   background: white;
   padding: 0px 60px;
   border-radius: 10px;
-  width: 500px;
+  width: 30%;
   min-width: max-content;
 }
 .label {
@@ -47,3 +47,17 @@
   border-radius: 5px;
   border: 1px solid gray;
 }
+
+.register-h1 {
+    margin-top: 50px;
+  font-family: "Bigelow Rules";
+  text-align: center;
+  font-size: 15ch;
+  color: rgb(173, 157, 126);
+}
+.register-h5 {
+    font-family: 'Inconsolata', monospace;
+    text-align: center;
+    font-size: 4.5ch;
+    color: rgb(173, 157, 126);
+  }
