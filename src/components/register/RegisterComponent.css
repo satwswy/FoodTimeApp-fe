@@ -61,3 +61,6 @@
     font-size: 4.5ch;
     color: rgb(173, 157, 126);
   }
+.error-bg{
+  color: red;
+}
