@@ -1,10 +1,13 @@
 .register {
   height: 100vh;
-  background: linear-gradient(
+  /* background: linear-gradient(
     90deg,
     rgba(77, 59, 37, 1) 0%,
     rgba(34, 53, 68, 1) 100%
-  );
+  ); */
+  background-image: url('https://4kwallpapers.com/images/wallpapers/windows-11-landscape-scenery-sunrise-stock-day-light-3840x2400-5667.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -40,6 +43,10 @@
   cursor: pointer;
   margin-top: 15px;
   margin-bottom: 30px;
+}
+.register-button:hover{
+  background-color: rebeccapurple !important;
+  opacity: 0.8;
 }
 .register-text {
   padding: 15px;
