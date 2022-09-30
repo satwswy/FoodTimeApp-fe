@@ -71,3 +71,11 @@
   .error-bg{
     color: red;
   }
+  .login-h5-register{
+    text-align: center;
+    font-size: 18px;
+    color: gray;
+  }
+  .sign-up{
+    margin-left: 5px;
+  }

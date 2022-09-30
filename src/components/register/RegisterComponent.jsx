@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './RegisterComponent.css'
 import { Form, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 
 const RegisterComponent = () => {
@@ -26,7 +27,7 @@ const RegisterComponent = () => {
         if (username.length >= 5 && email.match(pattern) && password.length >= 8 && confirmPassword === password) {
             console.log("submitted")
         }
-        
+
 
 
     }
@@ -48,7 +49,7 @@ const RegisterComponent = () => {
                     <Form.Group className="mb-3" >
                         <Form.Label className='label'>Email</Form.Label>
                         <Form.Control onChange={e => setEmail(e.target.value)} className='register-text' type="text" placeholder="Email" />
-                        {error&& !email.match({pattern})? <Form.Label className='label error-bg'>Email validation error must inclued @ .com TryAgain!</Form.Label>:''}
+                        {error && !email.match({ pattern }) ? <Form.Label className='label error-bg'>Email validation error must inclued @ .com TryAgain!</Form.Label> : ''}
                     </Form.Group>
                     <Form.Group className="mb-3" >
                         <Form.Label className='label'>Password</Form.Label>
@@ -63,6 +64,12 @@ const RegisterComponent = () => {
                     <Button className='register-button' variant="primary" type="submit" >
                         Submit
                     </Button>
+                    <h5 className='register-h5-login'>
+                        Already have an account? 
+                        <Link to="/login">
+                            <span className='sign-in'>Sign in</span> 
+                        </Link>
+                    </h5>
                 </Form>
             </div>
         </>

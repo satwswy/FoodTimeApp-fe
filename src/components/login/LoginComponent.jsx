@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './LoginComponent.css'
 import { Form, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 
 const LoginComponent = () => {
@@ -37,6 +38,12 @@ const LoginComponent = () => {
                     <Button className='login-button' variant="primary" type="submit" >
                         Login
                     </Button>
+                    <h5 className='login-h5-register'>
+                        Don't have an account? 
+                        <Link to="/register">
+                            <span className='sign-up'>Sign up</span> 
+                        </Link>
+                    </h5>
                 </Form>
             </div>
         </>
