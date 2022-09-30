@@ -21,13 +21,14 @@
     border-radius: 10px;
     width: 30%;
     min-width: max-content;
+    margin-top: 80px;
   }
   .label {
     font-size: 12px;
     color: gray;
   }
   .h1-login {
-    color: rgb(77, 1, 77);
+    color: rgb(89, 117, 142);
     text-align: center;
   }
   .login-button {
@@ -35,17 +36,17 @@
     height: 50px;
     padding: 10px;
     border: none;
-    background-color: rebeccapurple;
+    background-color: rgb(115, 145, 171);
     color: white;
     border-radius: 5px;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 25px;
     cursor: pointer;
     margin-top: 15px;
     margin-bottom: 30px;
   }
   .login-button:hover{
-    background-color: rebeccapurple !important;
+    background-color: rgb(115, 145, 171) !important;
     opacity: 0.8;
   }
   .login-text {
@@ -78,4 +79,8 @@
   }
   .sign-up{
     margin-left: 5px;
+  }
+  .span-log{
+    position: relative;
+    bottom: 6px;
   }

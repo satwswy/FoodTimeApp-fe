@@ -13,9 +13,9 @@ const RegisterComponent = () => {
     const [error, setError] = useState(false)
 
 
-  
+
     let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    
+
 
     const validateForm = (event) => {
         event.preventDefault();
@@ -61,12 +61,12 @@ const RegisterComponent = () => {
                         {error && confirmPassword !== password ? <Form.Label className='label error-bg'>Passoword dont match</Form.Label> : ''}
                     </Form.Group>
                     <Button className='register-button' variant="primary" type="submit" >
-                        Submit
+                        <span className='span-sub'>Submit</span>
                     </Button>
                     <h5 className='register-h5-login'>
-                        Already have an account? 
+                        Already have an account?
                         <Link to="/login">
-                            <span className='sign-in'>Sign in</span> 
+                            <span className='sign-in'>Sign in</span>
                         </Link>
                     </h5>
                 </Form>

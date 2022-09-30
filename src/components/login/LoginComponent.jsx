@@ -36,7 +36,8 @@ const LoginComponent = () => {
                         <Form.Control onChange={e => setPassword(e.target.value)} className='login-text' type="text" placeholder="Password" />
                     </Form.Group>
                     <Button className='login-button' variant="primary" type="submit" >
-                        Login
+                        <span className='span-log'>Login</span>
+                        
                     </Button>
                     <h5 className='login-h5-register'>
                         Don't have an account? 
