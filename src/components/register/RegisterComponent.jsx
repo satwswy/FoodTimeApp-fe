@@ -13,10 +13,9 @@ const RegisterComponent = () => {
     const [error, setError] = useState(false)
 
 
-    let emailVal = "Email validation error must inclued @ .com TryAgain!";
-    let passVal = "Passowrd char must not be less than 8";
+  
     let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    let usernameVal = "Username char must not be less than 8";
+    
 
     const validateForm = (event) => {
         event.preventDefault();
