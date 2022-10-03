@@ -1,92 +1,78 @@
 import React, { useState } from "react"
 import "./header.css"
-import { Link, NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom"
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { useRef } from "react";
 
 const Header = () => {
-  const [click, setClick] = useState(false);
+  const navRef = useRef();
 
-  const handleClick = () => setClick(!click);
+  const showNavbar = () => {
+    navRef.current.classList.toggle("responsive_nav")
+  }
   return (
     <>
       <nav className="navbar">
-        <div className="nav-container">
-          <NavLink  to="/" className="nav-logo">
+        <div className="nav-container" ref={navRef}>
+          <div className="nav-logo">
             FoodTime
-            <i className="fas fa-code"></i>
-          </NavLink>
-
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <NavLink
-                
-                to="/"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                
-                to="/about"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                About
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                
-                to="/blog"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Blog
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                
-                to="/contact"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Contact Us
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                
-                to="/register"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Register
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                
-                to="/login"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Login
-              </NavLink>
-            </li>
-          </ul>
-          <div className="nav-icon" onClick={handleClick}>
-            <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
           </div>
+          <div className="nav-item">
+            <NavLink
+              to="/"
+              className="nav-links"
+            >
+              Home
+            </NavLink>
+          </div>
+          <div className="nav-item">
+            <NavLink
+              to="/"
+              className="nav-links"
+            >
+              About
+            </NavLink>
+          </div>
+          <div className="nav-item">
+            <NavLink
+              to="/"
+              className="nav-links"
+            >
+              Blog
+            </NavLink>
+          </div>
+          <div className="nav-item">
+            <NavLink
+              to="/"
+              className="nav-links"
+            >
+              Contact Us
+            </NavLink>
+          </div>
+          <div className="nav-item">
+            <NavLink
+              to="/register"
+              className="nav-links"
+            >
+              Register
+            </NavLink>
+          </div>
+          <div className="nav-item">
+            <NavLink
+              to="/login"
+              className="nav-links"
+            >
+              Login
+            </NavLink>
+          </div>
+          <button className="nav-btn nav-close-btn" onClick={showNavbar}>
+          <FaTimes />
+          </button>
         </div>
+        
+          <button className="nav-btn" onClick={showNavbar}>
+          <FaBars />
+          </button>
       </nav>
     </>
   );

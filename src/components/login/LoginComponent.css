@@ -1,79 +1,78 @@
 .login {
-    background-image: url('https://4kwallpapers.com/images/wallpapers/windows-11-landscape-scenery-sunrise-stock-day-light-3840x2400-5667.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 40px;
-    height: 90vh;
-    
-  }
-  
-  .login-form-div {
-    background: white;
-    padding: 0px 60px;
-    border-radius: 10px;
-    width: 20%;
-    min-width: max-content;
-    margin-top: 80px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin-bottom: 100px;
-  }
-  .label {
-    font-size: 12px;
-    color: gray;
-  }
-  .h1-login {
-    color: rgb(89, 117, 142);
-    text-align: center;
-  }
-  .login-button {
-    width: 100%;
-    height: 50px;
-    padding: 10px;
-    border: none;
-    background-color: rgb(115, 145, 171);
-    color: white;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 25px;
-    cursor: pointer;
-    margin-top: 15px;
-    margin-bottom: 30px;
-  }
-  .login-button:hover{
-    background-color: rgb(115, 145, 171) !important;
-    opacity: 0.8;
-  }
-  .login-text {
-    padding: 15px;
-    margin: 10px 0px;
-    border-radius: 5px;
-    border: 1px solid gray;
-  }
-  .login-h5 {
-      font-family: 'Inconsolata', monospace;
-      text-align: center;
-      font-size: 4.5ch;
-      color: rgb(173, 157, 126);
-    }
-  .error-bg{
-    color: red;
-  }
-  .login-h5-register{
-    text-align: center;
-    font-size: 18px;
-    color: gray;
-  }
-  .sign-up{
-    margin-left: 5px;
-  }
-  .span-log{
-    position: relative;
-    bottom: 6px;
-  }
+  background-image: url("https://4kwallpapers.com/images/wallpapers/windows-11-landscape-scenery-sunrise-stock-day-light-3840x2400-5667.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  height: 90vh;
+}
+
+.login-form-div {
+  background: white;
+  padding: 0px 60px;
+  border-radius: 10px;
+  width: 20%;
+  min-width: max-content;
+  margin-top: 80px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-bottom: 100px;
+}
+.label {
+  font-size: 12px;
+  color: gray;
+}
+.h1-login {
+  color: rgb(89, 117, 142);
+  text-align: center;
+}
+.login-button {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border: none;
+  background-color: rgb(115, 145, 171);
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+.login-button:hover {
+  background-color: rgb(115, 145, 171) !important;
+  opacity: 0.8;
+}
+.login-text {
+  padding: 15px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+.login-h5 {
+  font-family: "Inconsolata", monospace;
+  text-align: center;
+  font-size: 4.5ch;
+  color: rgb(173, 157, 126);
+}
+.error-bg {
+  color: red;
+}
+.login-h5-register {
+  text-align: center;
+  font-size: 18px;
+  color: gray;
+}
+.sign-up {
+  margin-left: 5px;
+}
+.span-log {
+  position: relative;
+  bottom: 6px;
+}
