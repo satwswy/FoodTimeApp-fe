@@ -33,10 +33,7 @@ const RegisterComponent = () => {
 
     return (
         <>
-            <div className='register'>
-
-                <h1 className='register-h1'>FOOD TIME</h1>
-                
+            <div className='register'>             
                 <Form className='register-form-div' onSubmit={validateForm} >
 
                     <h1 className='h1-register'>Register</h1>

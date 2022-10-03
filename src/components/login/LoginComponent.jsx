@@ -21,10 +21,7 @@ const LoginComponent = () => {
 
     return (
         <>
-            <div className='login'>
-
-                <h1 className='login-h1'>FOOD TIME</h1>
-                
+            <div className='login'>            
                 <Form className='login-form-div' onSubmit={validateForm} >
                     <h1 className='h1-login'>Login</h1>
                     <Form.Group className="mb-3" >

@@ -1,8 +1,9 @@
 import React from "react"
+import Footer from "../footer/Footer"
 import Featured from "./featured/Featured"
 import Hero from "./hero/Hero"
 import Location from "./location/Location"
-import Recent from "./recent/Recent"
+
 
 
 const Home = () => {
@@ -10,8 +11,8 @@ const Home = () => {
     <>
       <Hero />
       <Featured />
-      <Recent />
       <Location />
+      <Footer />
     </>
   )
 }

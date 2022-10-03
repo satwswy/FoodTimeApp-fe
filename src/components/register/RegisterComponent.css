@@ -1,31 +1,26 @@
 .register {
-  height: 80vh;
-  /* background: linear-gradient(
-    90deg,
-    rgba(77, 59, 37, 1) 0%,
-    rgba(34, 53, 68, 1) 100%
-  ); */
   background-image: url('https://4kwallpapers.com/images/wallpapers/windows-11-landscape-scenery-sunrise-stock-day-light-3840x2400-5667.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
   gap: 40px;
+  height: 90vh;
 }
-
 .register-form-div {
   background: white;
   padding: 0px 60px;
   border-radius: 10px;
-  width: 30%;
+  width: 20%;
   min-width: max-content;
   margin-top: 80px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   height: 600px;
+  margin-bottom: 150px;
 }
 .label {
   font-size: 12px;
@@ -58,14 +53,6 @@
   margin: 10px 0px;
   border-radius: 5px;
   border: 1px solid gray;
-}
-
-.register-h1 {
-    margin-top: 50px;
-  font-family: "Bigelow Rules";
-  text-align: center;
-  font-size: 15ch;
-  color: rgb(173, 157, 126);
 }
 .register-h5 {
     font-family: 'Inconsolata', monospace;

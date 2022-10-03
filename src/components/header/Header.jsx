@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import "./header.css"
-import { nav } from "../../data/Data"
 import { Link, NavLink } from "react-router-dom"
 
 const Header = () => {
