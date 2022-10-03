@@ -94,7 +94,6 @@
 		justify-content: center;
 		gap: 1.5rem;
 		background-color:  #29335c;
-		transition: 1s;
 		transform: translateY(-100vh);
 	}
 
