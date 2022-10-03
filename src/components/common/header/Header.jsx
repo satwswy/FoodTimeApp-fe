@@ -1,43 +1,96 @@
 import React, { useState } from "react"
 import "./header.css"
 import { nav } from "../../data/Data"
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 const Header = () => {
-  const [navList, setNavList] = useState(false)
+  const [click, setClick] = useState(false);
 
+  const handleClick = () => setClick(!click);
   return (
     <>
-      <header>
-        <div className='container flex'>
-          <div className='logo'>
-            <img src='https://cdn.iconscout.com/icon/premium/png-256-thumb/food-time-3970087-3282549.png' alt='' />
-          </div>
-          <div className='nav'>
-            <ul className={navList ? "small" : "flex"}>
-              {nav.map((list, index) => (
-                <li key={index}>
-                  <Link to={list.path}>{list.text}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className='button flex'>
-          <button className='btn1'>
-              <i className='fa fa-sign-out'></i> Register
-            </button>
-            <button className='btn1'>
-              <i className='fa fa-sign-out'></i> Sign In
-            </button>
-          </div>
+      <nav className="navbar">
+        <div className="nav-container">
+          <NavLink  to="/" className="nav-logo">
+            FoodTime
+            <i className="fas fa-code"></i>
+          </NavLink>
 
-          <div className='toggle'>
-            <button onClick={() => setNavList(!navList)}>{navList ? <i className='fa fa-times'></i> : <i className='fa fa-bars'></i>}</button>
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <NavLink
+                
+                to="/"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                
+                to="/about"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                About
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                
+                to="/blog"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Blog
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                
+                to="/contact"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Contact Us
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                
+                to="/register"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Register
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                
+                to="/login"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Login
+              </NavLink>
+            </li>
+          </ul>
+          <div className="nav-icon" onClick={handleClick}>
+            <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
           </div>
         </div>
-      </header>
+      </nav>
     </>
-  )
+  );
 }
 
 export default Header

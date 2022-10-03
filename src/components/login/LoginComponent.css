@@ -1,5 +1,5 @@
 .login {
-    height: 100vh;
+    height: 80vh;
     /* background: linear-gradient(
       90deg,
       rgba(77, 59, 37, 1) 0%,
@@ -22,6 +22,10 @@
     width: 30%;
     min-width: max-content;
     margin-top: 80px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
   .label {
     font-size: 12px;

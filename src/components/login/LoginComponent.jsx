@@ -24,7 +24,7 @@ const LoginComponent = () => {
             <div className='login'>
 
                 <h1 className='login-h1'>FOOD TIME</h1>
-                <h5 className='login-h5'>Please Login to continue</h5>
+                
                 <Form className='login-form-div' onSubmit={validateForm} >
                     <h1 className='h1-login'>Login</h1>
                     <Form.Group className="mb-3" >
