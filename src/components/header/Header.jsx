@@ -66,13 +66,12 @@ const Header = () => {
             </NavLink>
           </div>
           <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-          <FaTimes />
+            <FaTimes />
           </button>
         </div>
-        
-          <button className="nav-btn" onClick={showNavbar}>
+        <button className="nav-btn" onClick={showNavbar}>
           <FaBars />
-          </button>
+        </button>
       </nav>
     </>
   );
