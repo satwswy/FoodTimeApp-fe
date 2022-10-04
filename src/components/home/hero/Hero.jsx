@@ -10,11 +10,9 @@ const Hero = () => {
         </div>
         <div className="hero-content">
           <div className="title">
-            <h1>TRAVEL TO EXPLORE</h1>
+            <h1>Search Your Next Restaurant Reservation</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-              natus, enim ipsam magnam odit deserunt itaque? Minima earum velit
-              tenetur!
+            Find new and featured restaurants located in your city.
             </p>
           </div>
           <div className="search">
