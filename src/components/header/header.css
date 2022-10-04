@@ -1,10 +1,10 @@
 .navbar {
-  background-color: #1f5156;
+  background-color: rgb(97, 74, 74);
   height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   position: sticky;
   top: 0;
   z-index: 20;
