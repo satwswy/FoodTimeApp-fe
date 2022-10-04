@@ -1,7 +1,7 @@
 import React from "react"
-import Footer from "../footer/Footer"
 import Hero from "./hero/Hero"
 import Location from "./location/Location"
+import Footer from "./footer/Footer"
 
 
 

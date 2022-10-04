@@ -6,7 +6,7 @@ const Hero = () => {
     <>
       <section className="section-div">
         <div className="background">
-          <img src="https://www.aafoodservice.com/wp-content/themes/custom-theme/img/slider-v1704.jpg" alt="background-image" />
+          <img src="https://images.pexels.com/photos/3184191/pexels-photo-3184191.jpeg?auto=compress&cs=tinysrgb&w=1600" />
         </div>
         <div className="hero-content">
           <div className="title">

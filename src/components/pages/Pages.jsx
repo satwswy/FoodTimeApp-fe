@@ -1,7 +1,6 @@
 import React from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Home from "../home/Home"
-import Footer from "../footer/Footer"
 import LoginComponent from "../login/LoginComponent"
 import RegisterComponent from "../register/RegisterComponent"
 import Header from "../header/Header"

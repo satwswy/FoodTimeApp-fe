@@ -1,8 +1,7 @@
 .navbar {
-  background-color: rgb(97, 74, 74);
+  background-color: rgb(151, 133, 114);
   height: 10vh;
   display: flex;
-  justify-content: center;
   align-items: center;
   font-size: 1.5rem;
   position: sticky;
@@ -16,13 +15,12 @@
   align-items: center;
   width: 100%;
   height: 80px;
-  max-width: 1500px;
 }
 
 .nav-logo {
   color: white;
   align-items: center;
-  margin-left: 20px;
+  margin-left: 80px;
   text-decoration: none;
   font-size: 2rem;
   flex-grow: 1;
@@ -40,7 +38,8 @@
 
 .nav-item {
   line-height: 40px;
-  margin-right: 1rem;
+  /* margin-right: 1rem; */
+
 }
 
 .nav-item:after {
