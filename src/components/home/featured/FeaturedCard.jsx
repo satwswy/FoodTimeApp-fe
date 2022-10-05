@@ -1,14 +1,14 @@
 import React from "react"
 import { featured } from "../../data/Data"
-
+import './Featured.css'
 const FeaturedCard = () => {
   return (
     <>
       <div className='content grid5 mtop'>
         {featured.map((items, index) => (
           <div className='box' key={index}>
-            <img src={items.cover} alt='' />
-            <h4>{items.name}</h4>
+            <img className="f-img" src={items.cover} alt='' />
+            <h4 className="f-h4">{items.name}</h4>
             <label>{items.total}</label>
           </div>
         ))}

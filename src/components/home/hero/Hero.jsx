@@ -5,8 +5,8 @@ const Hero = () => {
   return (
     <>
       <section className="section-div">
-        <div className="background">
-          <img src="https://images.pexels.com/photos/3184191/pexels-photo-3184191.jpeg?auto=compress&cs=tinysrgb&w=1600" />
+        <div className="hero-background">
+          <img src="https://images.pexels.com/photos/4577179/pexels-photo-4577179.jpeg?auto=compress&cs=tinysrgb&w=1600" />
         </div>
         <div className="hero-content">
           <div className="title">

@@ -3,10 +3,10 @@
   width: 100%;
   height: 100%;
 }
-.background {
+.hero-background {
   height: 100%;
 }
-.background img {
+.hero-background img {
   width: 100%;
   filter: brightness(60%);
 }
@@ -86,10 +86,10 @@
   .section-div {
     height: 25rem;
   }
-  .section-div .background {
+  .section-div .hero-background {
     background-color: palegreen;
   }
-  .section-div .background img {
+  .section-div .hero-background img {
     height: 100%;
   }
   .section-div .hero-content .title h1 {
