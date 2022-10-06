@@ -1,45 +1,77 @@
-.footer-container {
-  color: black;
-  display: flex;
-  justify-content: space-evenly;
-  background-color: gray;
-  align-items: center;
-  padding: 2.5rem;
+.footer {
+  margin: 0;
+  background: linear-gradient(to right, #2f3a36, #73817c);
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10vw;
+  padding: 4vw;
 }
-
-.footer-container ul {
+.footer p {
+  font-size: 1.1rem;
+  line-height: 2rem;
+  letter-spacing: 0.1rem;
+}
+.footer ul {
   display: flex;
   list-style-type: none;
-  gap: 2rem;
+  gap: 4vw;
+  margin-top: 2vw;
 }
-.footer-container a {
-  text-decoration: none;
-  color: black;
+.footer ul li {
+  padding: 0.8rem;
+  border-radius: 2rem;
+  background-color: white;
   transition: 0.3s ease-in-out;
-}
-.footer-container a:hover {
-  color: #302ce9;
   cursor: pointer;
 }
-.footer-container svg {
-  font-size: 1.3rem;
+.footer ul li svg {
+  transform: scale(1.2);
+}
+.footer ul li svg:hover {
+  background-color: black;
+}
+.footer ul svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2f3a36;
+  font-size: 1.6rem;
   transition: 0.3s ease-in-out;
 }
-.footer-container svg:hover {
-  color: #302ce9;
-  cursor: pointer;
+.footer img {
+  width: 10vw;
 }
-@media screen and (min-width: 0px) and (max-width: 580px) {
-  .footer-container {
-    flex-direction: column;
-    gap: 2rem;
-    display: none;
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.footer .container h3 {
+  font-size: 2rem;
+}
+.lower__footer {
+  margin: 0;
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+}
+.lower__footer h2 span {
+  color: #b6c9c2;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 0px) and (max-width: 1080px) {
+  .footer {
+    grid-template-columns: 1fr;
   }
-
-  .footer-container ul {
-    flex-direction: column;
+  .container img {
+    height: 4rem;
+    width: 10rem;
   }
-  .social__links {
-    flex-direction: row;
+}
+@media screen and (min-width: 0px) and (max-width: 450px) {
+  .lower__footer h2 span {
+    display: block;
   }
 }
