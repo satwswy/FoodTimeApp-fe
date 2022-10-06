@@ -4,6 +4,7 @@
   text-align: center;
   padding: 30px;
   cursor: pointer;
+  background-color: cadetblue;
 }
 .featured img {
   width: 65px;
@@ -14,6 +15,8 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
+  height: 600px;
+  justify-content: space-evenly;
 }
 .grid5 {
   display: grid;
@@ -22,17 +25,17 @@
 }
 .featured-heading {
   text-align: center;
-  width: 60%;
-  margin: auto;
+  width: 100%;
 }
 .featured-heading h1 {
   color: #2d3954;
   font-weight: 600;
   text-transform: capitalize;
-  font-size: 35px;
+  font-size: 2.5rem;
 }
 .featured-heading p {
   color: #72809d;
+  font-size: 1.5rem;
 }
 @media screen and (max-width: 800px) {
   .grid5 {
