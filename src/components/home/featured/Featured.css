@@ -26,6 +26,11 @@
 .featured-heading {
   text-align: center;
   width: 100%;
+  margin-bottom: 80px;
+  background-color: rgb(226, 247, 239);
+  padding-top: 5px;
+  padding-bottom: 5px;
+
 }
 .featured-heading h1 {
   color: #2d3954;

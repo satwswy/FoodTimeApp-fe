@@ -88,3 +88,35 @@ const topNav = [
 export const getTopNav = () => {
   return topNav;
 };
+export const list = [
+  {
+    image: "https://www.vassilenas.gr/wp-content/gallery/home-page-restaurant-row/vassilenas-restaurant-02.jpg",
+    name: "restaurant 1",
+    city: "Athens",
+  },
+  {
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/ef/Restaurant_N%C3%A4sinneula.jpg",
+    name: "restaurant 2",
+    city: "Thessaloniki",
+  },
+  {
+    image: "https://cdn.vox-cdn.com/thumbor/OheW0CNYdNihux9eVpJ958_bVCE=/0x0:5996x4003/1200x900/filters:focal(1003x1633:1961x2591)/cdn.vox-cdn.com/uploads/chorus_image/image/51830567/2021_03_23_Merois_008.30.jpg",
+    name: "restaurant 3",
+    city: "Patra",
+  },
+  {
+    image: "https://media.istockphoto.com/photos/two-empty-wine-glasses-sitting-in-a-restaurant-on-a-warm-sunny-picture-id1018141890?k=20&m=1018141890&s=612x612&w=0&h=uMDP00MMIhlwQE77EEcoelc2oSKBT_B6avaXqtxgiow=",
+    name: "restaurant 4",
+    city: "Xanthi",
+  },
+  {
+    image: "https://assets.cntraveller.in/photos/62ac8a4d4507a8eb3d09d1b8/master/w_1600%2Cc_limit/AKINA%25201%2520Final.jpg",
+    name: "restaurant 5",
+    city: "Veria",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&w=1000&q=80",
+    name: "Rrestaurant 6",
+    city: "Athens",
+  },
+]
