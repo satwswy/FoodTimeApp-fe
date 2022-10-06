@@ -1,8 +1,7 @@
 import React from "react"
 import Hero from "./hero/Hero"
-import Location from "./location/Location"
-import Footer from "./footer/Footer"
 import Featured from "./featured/Featured"
+import Location from "./location/Location"
 
 
 
@@ -11,7 +10,7 @@ const Home = () => {
     <>
       <Hero />
      <Featured/>
-     
+     <Location/>
     </>
   )
 }
