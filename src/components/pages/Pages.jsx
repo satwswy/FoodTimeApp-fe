@@ -4,6 +4,7 @@ import Home from "../home/Home"
 import LoginComponent from "../login/LoginComponent"
 import RegisterComponent from "../register/RegisterComponent"
 import Header from "../header/Header"
+import List from "../list/List"
 const Pages = () => {
   return (
     <>
@@ -13,6 +14,7 @@ const Pages = () => {
           <Route  path='/' element={<Home/>} />
           <Route  path='/login' element={<LoginComponent/>} />
           <Route  path='/register' element={<RegisterComponent/>} />
+          <Route  path='/searchList' element={<List/>} />
         </Routes>
       </Router>
     </>

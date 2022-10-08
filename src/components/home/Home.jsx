@@ -11,10 +11,10 @@ const Home = () => {
   return (
     <>
       <Hero />
-     <Featured/>
-     <Location/>
-   <Recent />
-   <Footer/>
+      <Featured />
+      <Location />
+      <Recent />
+      <Footer />
     </>
   )
 }
