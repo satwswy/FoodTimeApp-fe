@@ -9,7 +9,7 @@ const List = () => {
   const [city, setCity] = useState(location.state.city);
   const [date, setDate] = useState(location.state.selectedDate);
   const [options, setOptions] = useState(location.state.options);
-
+console.log(city)
   return (
     <div>
       <div className="listContainer">
@@ -48,6 +48,46 @@ const List = () => {
                     min={1}
                     className="lsOptionInput"
                     placeholder={options.tables}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="lsItem">
+              <label>Categories</label>
+              <div className="lsOptions">
+                <div className="lsOptionItem">
+                  <span className="lsOptionText">Pizza</span>
+                  <input
+                    type="checkbox"
+                    className="lsOptionInput"
+                  />
+                </div>
+                <div className="lsOptionItem">
+                  <span className="lsOptionText">Burgers</span>
+                  <input
+                    type="checkbox"
+                    className="lsOptionInput"
+                  />
+                </div>
+                <div className="lsOptionItem">
+                  <span className="lsOptionText">Pasta</span>
+                  <input
+                    type="checkbox"
+                    className="lsOptionInput"
+                  />
+                </div>
+                <div className="lsOptionItem">
+                  <span className="lsOptionText">Grill</span>
+                  <input
+                    type="checkbox"
+                    className="lsOptionInput"
+                  />
+                </div>
+                <div className="lsOptionItem">
+                  <span className="lsOptionText">SeaFood</span>
+                  <input
+                    type="checkbox"
+                    className="lsOptionInput"
                   />
                 </div>
               </div>

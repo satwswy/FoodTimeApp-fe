@@ -2,7 +2,8 @@ import React from 'react'
 import { location } from "../../data/Data"
 import './Location.css'
 
-function Location() {
+const Location =()=> {
+
     return (
         <section className='location-div'>
             <div className='featured-heading'>
@@ -10,12 +11,12 @@ function Location() {
                 <p>Find Restaurants in your local City</p>
             </div>
             <div className="destinations">
-                {location.map((destination) => {
+                {location.map((location) => {
                     return (
                         <div className="destination">
-                            <img src={destination.image} alt="" />
-                            <h3>{destination.title}</h3>
-                            <p>{destination.duration}</p>
+                            <img src={location.image} alt="" />
+                            <h3>{location.title}</h3>
+                            <p>{location.number}</p>
                         </div>
                     );
                 })}

@@ -52,27 +52,27 @@ export const location = [
   {
     image: "https://lp-cms-production.imgix.net/2021-05/shutterstockRF_1193397715.jpg",
     title: "Athens",
-    duration: "184 Restaurants",
+    number: "184 Restaurants",
   },
   {
     image: "https://www.hellascar.com/wp-content/uploads/2020/02/thessaloniki-rent-a-car.jpg",
     title: "Thessaloniki", 
-    duration: "154 Restaurants",
+    number: "154 Restaurants",
   },
   {
     image: "https://explore.patras.gr/wp-content/uploads/2021/02/plateiaYpsilonAlonion-3-1024x682.jpg",
     title: "Patra",   
-    duration: "113 Restaurants",
+    number: "113 Restaurants",
   },
   {
     image: "https://www.visitgreece.gr/files/merakos_001_xanthi-oldcity_1310x769.jpg",
     title: "Xanthi",
-    duration: "84 Restaurants",
+    number: "84 Restaurants",
   },
   {
     image: "https://www.ertnews.gr/wp-content/uploads/2022/09/veroia-geniki-1-2048x1365-1.jpg",
     title: "Veria",
-    duration: "82 Restaurants",
+    number: "82 Restaurants",
   },
  
   
