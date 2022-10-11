@@ -18,7 +18,7 @@ console.log(city)
             <h1 className="lsTitle">Search</h1>
             <div className="lsItem">
               <label>city</label>
-              <input placeholder={city} type="text" onChange={(e) => setCity(e.target.value)}/>
+              <input placeholder={city || 'Add a city'} type="text" onChange={(e) => setCity(e.target.value)}/>
             </div>
             <div className="lsItem">
               <label>Check-in Date</label>
@@ -38,7 +38,7 @@ console.log(city)
                     type="number"
                     min={1}
                     className="lsOptionInput"
-                    placeholder={options.people}
+                    placeholder={options ? options.people : 1}
                   />
                 </div>
                 <div className="lsOptionItem">
@@ -47,7 +47,7 @@ console.log(city)
                     type="number"
                     min={1}
                     className="lsOptionInput"
-                    placeholder={options.tables}
+                    placeholder={options ? options.tables : 1}
                   />
                 </div>
               </div>
