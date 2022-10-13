@@ -10,7 +10,6 @@ const List = () => {
   const [type, setType] = useState(location.state.type);
   const [date, setDate] = useState(location.state.selectedDate);
   const [options, setOptions] = useState(location.state.options);
-console.log(type)
   return (
     <div>
       <div className="listContainer">
