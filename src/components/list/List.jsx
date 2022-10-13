@@ -7,9 +7,10 @@ import SearchItem from "../../components/searchItem/SearchItem";
 const List = () => {
   const location = useLocation();
   const [city, setCity] = useState(location.state.city);
+  const [type, setType] = useState(location.state.type);
   const [date, setDate] = useState(location.state.selectedDate);
   const [options, setOptions] = useState(location.state.options);
-console.log(city)
+console.log(type)
   return (
     <div>
       <div className="listContainer">
