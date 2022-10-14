@@ -1,7 +1,6 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
 import useFetch from "../../../hooks/useFetch"
-import { featured } from "../../data/Data"
 import './Featured.css'
 const FeaturedCard = () => {
   const navigate = useNavigate();

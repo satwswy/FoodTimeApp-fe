@@ -1,5 +1,4 @@
 import React from 'react'
-import { location } from "../../data/Data"
 import './Location.css'
 import { useNavigate } from "react-router-dom";
 import useFetch from '../../../hooks/useFetch';
