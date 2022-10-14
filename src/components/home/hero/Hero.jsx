@@ -56,6 +56,7 @@ const Hero = () => {
               selected={selectedDate}
               minDate={new Date()}
               showTimeSelect
+              dateFormat= 'dd/MM/yy hh:mm aa'
               />
             </div>
             <div className="headerSearchItem">
