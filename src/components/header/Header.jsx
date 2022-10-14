@@ -15,7 +15,12 @@ const Header = () => {
       <nav className="navbar">
         <div className="nav-container" ref={navRef}>
           <div className="nav-logo">
-            FoodTime
+          <NavLink
+              to="/"
+              className="nav-links"
+            >
+              Food Time
+            </NavLink> 
           </div>
           <div className="nav-item">
             <NavLink

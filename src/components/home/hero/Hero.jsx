@@ -51,11 +51,11 @@ const Hero = () => {
             <div className="container">
               <label htmlFor="">Date</label>
               <DatePicker
-              showTimeSelect
               className="select-date"
-              selected={selectedDate}
               onChange={date => setSelectedDate(date)}
+              selected={selectedDate}
               minDate={new Date()}
+              showTimeSelect
               />
             </div>
             <div className="headerSearchItem">
