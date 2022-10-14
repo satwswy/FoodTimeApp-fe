@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import "./searchItem.css";
 
-const SearchItem = () => {
+const SearchItem = ({item}) => {
   return (
     <div className="searchItem">
       <img
@@ -11,12 +12,17 @@ const SearchItem = () => {
       <div className="siDesc">
         <h1 className="siTitle">Restaurants</h1>
         <span className="siFeatures">
-        name
+        {item.name}
+        </span>
+        <span className="siFeatures">
+        {item.city}
         </span>
       </div>
       <div className="siDetails">
         <div className="siDetailTexts">
+          <Link to={`/restaurants/${item._id}`}>
           <button className="siCheckButton">Check Restaurant</button>
+          </Link>
         </div>
       </div>
     </div>

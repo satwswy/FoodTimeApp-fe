@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import DatePicker from 'react-datepicker'
 import SearchItem from "../../components/searchItem/SearchItem";
+import useFetch from "../../hooks/useFetch.js"
 
 const List = () => {
   const location = useLocation();
@@ -10,6 +11,9 @@ const List = () => {
   const [type, setType] = useState(location.state.type);
   const [date, setDate] = useState(location.state.selectedDate);
   const [options, setOptions] = useState(location.state.options);
+
+  const {data, loading, error, refetch} = useFetch(`/restaurants?city=${city}`)
+
   return (
     <div>
       <div className="listContainer">
@@ -95,15 +99,11 @@ const List = () => {
             <button>Search</button>
           </div>
           <div className="listResult">
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
+            {loading ? "loading" : <>
+            {data.map(item=>(
+            <SearchItem item={item} key={item._id}/>
+            ))}
+            </>}       
           </div>
         </div>
       </div>

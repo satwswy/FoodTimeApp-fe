@@ -15,9 +15,10 @@ const Recent = () => {
                         <p>Find Recently Added Restaurants</p>
                     </div>
                     <div className="restaurants">
-                        {recentData.map((restaurant) => {
+                        {recentData.map((restaurant,index) => {
                             return (
-                                <div className="restaurant">
+                                <div className="restaurant" key={index}>
+                                    {/* restaurant.photos[0] */}
                                     <img src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cmVzdGF1cmFudHxlbnwwfHwwfHw%3D&w=1000&q=80" alt="" />
                                     <h3>{restaurant.name}</h3>
                                     <p>{restaurant.city}</p>
