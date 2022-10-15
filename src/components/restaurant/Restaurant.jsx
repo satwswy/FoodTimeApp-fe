@@ -1,4 +1,4 @@
-import "./hotel.css";
+import "./restaurant.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowLeft,
@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-const Hotel = () => {
+const Restaurant = () => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
 
@@ -52,7 +52,7 @@ const Hotel = () => {
 
   return (
     <div>
-      <div className="hotelContainer">
+      <div className="restaurantContainer">
         {open && (
           <div className="slider">
             <FontAwesomeIcon
@@ -75,57 +75,41 @@ const Hotel = () => {
             />
           </div>
         )}
-        <div className="hotelWrapper">
+        <div className="restaurantWrapper">
           <button className="bookNow">Reserve or Book Now!</button>
-          <h1 className="hotelTitle">Tower Street Apartments</h1>
-          <div className="hotelAddress">
+          <h1 className="restaurantTitle">Restaurant</h1>
+          <div className="restaurantAddress">
             <FontAwesomeIcon icon={faLocationDot} />
-            <span>Elton St 125 New york</span>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
           </div>
-          <span className="hotelDistance">
-            Excellent location – 500m from center
+          <span className="restaurantDistance">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
           </span>
-          <span className="hotelPriceHighlight">
-            Book a stay over $114 at this property and get a free airport taxi
+          <span className="restaurantPriceHighlight">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </span>
-          <div className="hotelImages">
+          <div className="restaurantImages">
             {photos.map((photo, i) => (
-              <div className="hotelImgWrapper" key={i}>
+              <div className="restaurantImgWrapper" key={i}>
                 <img
                   onClick={() => handleOpen(i)}
                   src={photo.src}
                   alt=""
-                  className="hotelImg"
+                  className="restaurantImg"
                 />
               </div>
             ))}
           </div>
-          <div className="hotelDetails">
-            <div className="hotelDetailsTexts">
-              <h1 className="hotelTitle">Stay in the heart of City</h1>
-              <p className="hotelDesc">
-                Located a 5-minute walk from St. Florian's Gate in Krakow, Tower
-                Street Apartments has accommodations with air conditioning and
-                free WiFi. The units come with hardwood floors and feature a
-                fully equipped kitchenette with a microwave, a flat-screen TV,
-                and a private bathroom with shower and a hairdryer. A fridge is
-                also offered, as well as an electric tea pot and a coffee
-                machine. Popular points of interest near the apartment include
-                Cloth Hall, Main Market Square and Town Hall Tower. The nearest
-                airport is John Paul II International Kraków–Balice, 16.1 km
-                from Tower Street Apartments, and the property offers a paid
-                airport shuttle service.
+          <div className="restaurantDetails">
+            <div className="restaurantDetailsTexts">
+              <h1 className="restaurantTitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h1>
+              <p className="restaurantDesc">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis, qui tempora neque, quia aut repellendus amet natus ab impedit quasi esse ut, quod sapiente? Minus voluptates molestias corporis provident beatae!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias rerum id ab magnam pariatur corporis? Vitae fugiat eaque neque ex aperiam voluptatum. Fuga, maxime. A voluptatibus cupiditate ut fugiat iste.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis mollitia accusamus, unde suscipit, ipsam laudantium laboriosam minus, ea deserunt aliquid maxime vel explicabo? Eaque sunt fugit veniam, accusantium cum fuga.
               </p>
             </div>
-            <div className="hotelDetailsPrice">
-              <h1>Perfect for a 9-night stay!</h1>
-              <span>
-                Located in the real heart of Krakow, this property has an
-                excellent location score of 9.8!
-              </span>
-              <h2>
-                <b>$945</b> (9 nights)
-              </h2>
+            <div className="restaurantDetailsPrice">
               <button>Reserve or Book Now!</button>
             </div>
           </div>
@@ -135,4 +119,4 @@ const Hotel = () => {
   );
 };
 
-export default Hotel;
+export default Restaurant;

@@ -5,6 +5,7 @@ import LoginComponent from "../login/LoginComponent"
 import RegisterComponent from "../register/RegisterComponent"
 import Header from "../header/Header"
 import List from "../list/List"
+import Restaurant from "../restaurant/Restaurant"
 const Pages = () => {
   return (
     <>
@@ -15,6 +16,7 @@ const Pages = () => {
           <Route  path='/login' element={<LoginComponent/>} />
           <Route  path='/register' element={<RegisterComponent/>} />
           <Route  path='/searchList' element={<List/>} />
+          <Route  path='/restaurants/:id' element={<Restaurant/>} />
         </Routes>
       </Router>
     </>
