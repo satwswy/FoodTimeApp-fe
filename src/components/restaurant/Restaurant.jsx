@@ -7,10 +7,16 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import useFetch from "../../hooks/useFetch";
+import { useLocation } from "react-router-dom";
 
 const Restaurant = () => {
+  const location = useLocation()
+  const id = location.pathname.split("/")[2];
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
+
+  const {data, loading, error, reFetch} = useFetch(`/restaurants/find/${id}`)
 
   const photos = [
     {
@@ -52,7 +58,7 @@ const Restaurant = () => {
 
   return (
     <div>
-      <div className="restaurantContainer">
+      {loading?"loading" : <div className="restaurantContainer">
         {open && (
           <div className="slider">
             <FontAwesomeIcon
@@ -77,7 +83,7 @@ const Restaurant = () => {
         )}
         <div className="restaurantWrapper">
           <button className="bookNow">Reserve or Book Now!</button>
-          <h1 className="restaurantTitle">Restaurant</h1>
+          <h1 className="restaurantTitle">{data.name}</h1>
           <div className="restaurantAddress">
             <FontAwesomeIcon icon={faLocationDot} />
             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
@@ -114,7 +120,7 @@ const Restaurant = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div>}
     </div>
   );
 };

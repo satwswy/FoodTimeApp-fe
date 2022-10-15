@@ -12,7 +12,10 @@ const List = () => {
   const [date, setDate] = useState(location.state.selectedDate);
   const [options, setOptions] = useState(location.state.options);
 
-  const {data, loading, error, refetch} = useFetch(`/restaurants?city=${city}`)
+  const {data, loading, error, reFetch} = useFetch(`/restaurants`)
+  const handleClick = () =>{
+    reFetch();
+  }
 
   const toggleType = (singleType) => {
     const singleTypeIndex = type.findIndex(t => t === singleType) // this is giving me the position of the element I clicked on
