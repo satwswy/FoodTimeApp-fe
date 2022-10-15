@@ -9,13 +9,14 @@ const List = () => {
   const location = useLocation();
   const [city, setCity] = useState(location.state.city);
   const [type, setType] = useState([location.state.type]);
-  const [date, setDate] = useState(location.state.selectedDate);
+  const [dates, setDates] = useState(location.state.dates);
   const [options, setOptions] = useState(location.state.options);
 
   const {data, loading, error, reFetch} = useFetch(`/restaurants`)
   const handleClick = () =>{
     reFetch();
   }
+  console.log(dates)
 
   const toggleType = (singleType) => {
     const singleTypeIndex = type.findIndex(t => t === singleType) // this is giving me the position of the element I clicked on
@@ -42,8 +43,8 @@ const List = () => {
               <label>Check-in Date</label>
               <DatePicker
               className="select-date2"
-              selected={date || new Date()}
-              onChange={date => setDate(date)}
+              selected={dates || new Date()}
+              onChange={dates => setDates(dates)}
               minDate={new Date()}
               />
             </div>

@@ -1,22 +1,26 @@
-import React from "react"
+import React, { useContext } from "react"
 import { useState } from "react";
 import { NavLink } from "react-router-dom"
 import 'react-datepicker/dist/react-datepicker.css'
 import DatePicker from 'react-datepicker'
 import "./hero.css"
 import { useNavigate } from "react-router-dom";
+import { SearchContext } from "../../../context/SearchContext";
 
 const Hero = () => {
   const [city, setCity] = useState("");
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [dates, setDates] = useState(new Date());
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
     people: 1,
     tables: 1,
   });
+  console.log(dates)
+  const {dispatch} = useContext(SearchContext)
   const navigate = useNavigate();
   const handleSearch = () => {
-    navigate("/searchList", { state: { city, selectedDate, options } });
+    dispatch({type:"NEW_SEARCH", payload:{city,dates,options}});
+    navigate("/searchList", { state: { city, dates, options } });
   };
   const handleOption = (name, operation) => {
     setOptions((prev) => {
@@ -26,6 +30,9 @@ const Hero = () => {
       };
     });
   };
+
+  
+
   return (
     <>
       <section className="section-div">
@@ -52,8 +59,8 @@ const Hero = () => {
               <label htmlFor="">Date</label>
               <DatePicker
               className="select-date"
-              onChange={date => setSelectedDate(date)}
-              selected={selectedDate}
+              onChange={dates => setDates(dates)}
+              selected={dates}
               minDate={new Date()}
               showTimeSelect
               dateFormat= 'dd/MM/yy hh:mm aa'

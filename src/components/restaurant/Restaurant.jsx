@@ -6,9 +6,10 @@ import {
   faCircleXmark,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { useLocation } from "react-router-dom";
+import { SearchContext } from "../../context/SearchContext";
 
 const Restaurant = () => {
   const location = useLocation()
@@ -18,6 +19,8 @@ const Restaurant = () => {
 
   const {data, loading, error, reFetch} = useFetch(`/restaurants/find/${id}`)
 
+  const {dates} = useContext(SearchContext)
+ console.log(dates)
   const photos = [
     {
       src: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707778.jpg?k=56ba0babbcbbfeb3d3e911728831dcbc390ed2cb16c51d88159f82bf751d04c6&o=&hp=1",
