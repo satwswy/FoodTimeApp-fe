@@ -1,10 +1,13 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import "./header.css"
 import { NavLink } from "react-router-dom"
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useRef } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const Header = () => {
+
+  const { user } = useContext(AuthContext);
   const navRef = useRef();
 
   const showNavbar = () => {
@@ -54,7 +57,7 @@ const Header = () => {
               Contact Us
             </NavLink>
           </div>
-          <div className="nav-item">
+         {!user &&<> <div className="nav-item">
             <NavLink
               to="/register"
               className="nav-links"
@@ -69,7 +72,7 @@ const Header = () => {
             >
               Login
             </NavLink>
-          </div>
+          </div></>}
           <button className="nav-btn nav-close-btn" onClick={showNavbar}>
             <FaTimes />
           </button>
