@@ -15,7 +15,7 @@ const Hero = () => {
     people: 1,
     tables: 1,
   });
-  console.log(dates)
+  
   const {dispatch} = useContext(SearchContext)
   const navigate = useNavigate();
   const handleSearch = () => {

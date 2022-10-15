@@ -16,7 +16,7 @@ const List = () => {
   const handleClick = () =>{
     reFetch();
   }
-  console.log(dates)
+  
 
   const toggleType = (singleType) => {
     const singleTypeIndex = type.findIndex(t => t === singleType) // this is giving me the position of the element I clicked on
