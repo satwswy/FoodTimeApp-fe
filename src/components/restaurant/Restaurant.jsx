@@ -8,16 +8,21 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useState } from "react";
 import useFetch from "../../hooks/useFetch";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
+import { AuthContext } from "../../context/AuthContext";
+import Reserve from "../reserve/Reserve";
 
 const Restaurant = () => {
   const location = useLocation()
   const id = location.pathname.split("/")[2];
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
-
+  const [openModal, setOpenModal] = useState(false);
   const {data, loading, error, reFetch} = useFetch(`/restaurants/find/${id}`)
+
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const {dates, options} = useContext(SearchContext)
  
@@ -58,7 +63,13 @@ const Restaurant = () => {
 
     setSlideNumber(newSlideNumber)
   };
-
+  const handleClick = () => {
+    if (user) {
+      setOpenModal(true);
+    } else {
+      navigate("/login");
+    }
+  };
   return (
     <div>
       {loading?"loading" : <div className="restaurantContainer">
@@ -119,11 +130,12 @@ const Restaurant = () => {
               </p>
             </div>
             <div className="restaurantDetailsPrice">
-              <button>Reserve or Book Now!</button>
+              <button onClick={handleClick}>Reserve or Book Now!</button>
             </div>
           </div>
         </div>
       </div>}
+      {openModal && <Reserve setOpen={setOpenModal} restaurantId={id}/>}
     </div>
   );
 };
