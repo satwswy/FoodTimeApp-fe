@@ -13,7 +13,7 @@ const Reserve = ({ setOpen, restaurantId }) => {
   const { data, loading, error } = useFetch(`/restaurants/table/${restaurantId}`);
   const { dates } = useContext(SearchContext);
 
-console.log(data)
+console.log('DATE SEARCHED: ', typeof dates)
 
   const handleSelect = (e) => {
     const checked = e.target.checked;
@@ -41,6 +41,38 @@ console.log(data)
       navigate("/");
     } catch (err) { }
   };
+
+  const formatDateToString = (dateObject) => {
+    let newDate = dateObject.toString().split(' ')
+    newDate.pop()
+    newDate.pop()
+    newDate.pop()
+    newDate.pop()
+    newDate.pop()
+    newDate.pop()
+    let searchedDateString = newDate.join(' ')
+    return searchedDateString
+  }
+
+  const returnTrue = (tableNumber) => {
+    console.log(tableNumber)
+    console.log(new Date(tableNumber.unavailableDates[0]?.split('T')[0]))
+
+    let searchedDate = formatDateToString(dates)
+    let found = false
+
+    tableNumber.unavailableDates.forEach(unDate => {
+      let unDateToRightDate = new Date(unDate.split('T')[0])  
+      let unDateToRightString = formatDateToString(unDateToRightDate)
+      if(searchedDate === unDateToRightString) {
+        found = true
+      }
+    })
+
+    return found
+
+  }
+
   return (
     <div className="reserve">
       <div className="rContainer">
@@ -61,13 +93,22 @@ console.log(data)
             </div>
             <div className="rSelectTables">
               {item.tableNumbers.map((tableNumber) => (
+                //unavailableDates
                 <div className="table">
                   <label>{tableNumber.number}</label>
                   <input
                     type="checkbox"
                     value={tableNumber._id}
                     onChange={handleSelect}
-                    // disabled={!isAvailable(tableNumber)}
+                    disabled={returnTrue(tableNumber)}
+                    // disabled={() => {
+                    //   let searchedDateArray = dates.split(' ')
+                    //   searchedDateArray.pop()
+                    //   searchedDateArray.pop()
+                    //   let searchedDateString = searchedDateArray.join(' ')
+                    //   console.log(searchedDateString)
+                    //   return true
+                    // }}
                   />
                 </div>
               ))}
