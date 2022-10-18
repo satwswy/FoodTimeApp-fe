@@ -13,15 +13,7 @@ const Reserve = ({ setOpen, restaurantId }) => {
   const { data, loading, error } = useFetch(`/restaurants/table/${restaurantId}`);
   const { dates } = useContext(SearchContext);
 
-
-
-  console.log(dates)
-  const isAvailable = (tableNumber) => {
-    const isFound = tableNumber.unavailableDates;
-    console.log(isFound)
-
-    
-  };
+console.log(data)
 
   const handleSelect = (e) => {
     const checked = e.target.checked;
@@ -75,7 +67,7 @@ const Reserve = ({ setOpen, restaurantId }) => {
                     type="checkbox"
                     value={tableNumber._id}
                     onChange={handleSelect}
-                    disabled={!isAvailable(tableNumber)}
+                    // disabled={!isAvailable(tableNumber)}
                   />
                 </div>
               ))}
