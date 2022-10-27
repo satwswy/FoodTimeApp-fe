@@ -5,7 +5,6 @@ import "./admin.scss";
 
 const Admin = () => {
   const { data, loading, error } = useFetch(`/restaurants`);
-  console.log(data)
   return (
     <div className="home">
       <Sidebar />
