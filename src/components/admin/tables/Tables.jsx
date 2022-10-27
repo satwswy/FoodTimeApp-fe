@@ -38,8 +38,7 @@ const Tables = () => {
     const [tables, setTables] = useState([]);
 
 
-    console.log(data)
-    console.log(restaurant)
+
 
 
 
