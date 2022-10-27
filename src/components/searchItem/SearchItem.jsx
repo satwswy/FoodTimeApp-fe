@@ -11,13 +11,12 @@ const SearchItem = ({item}) => {
         className="siImg"
       />
       <div className="siDesc">
-        <h1 className="siTitle">Restaurants</h1>
-        <span className="siFeatures">
-        {item.name}
-        </span>
-        <span className="siFeatures">
-        {item.city}
-        </span>
+        <h1 className="siTitle">Restaurant</h1>
+        <div className="rest-details">
+          <div className="rest-details-item"> <span className="rest-details-item-span">Restaurant Name :</span>  {item.name}</div>
+          <div className="rest-details-item"> <span className="rest-details-item-span">City :</span>  {item.city}</div>
+          <div className="rest-details-item"> <span className="rest-details-item-span">Type :</span>  {item.type}</div>
+        </div>
       </div>
       <div className="siDetails">
         <div className="siDetailTexts">

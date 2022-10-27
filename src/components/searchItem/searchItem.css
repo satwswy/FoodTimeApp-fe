@@ -24,6 +24,7 @@
 .siTitle {
   font-size: 20px;
   color: #0071c2;
+  align-self: center;
 }
 .siFeatures{
   font-size: 16px;
@@ -48,4 +49,17 @@
   border: none;
   cursor: pointer;
   border-radius: 5px;
+}
+.rest-details{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.rest-details-item{
+  font-size: 1.2rem;
+ font-family: 'Fuzzy Bubbles', cursive;
+}
+.rest-details-item-span{
+  color: green;
+  font-weight: 700;
 }
