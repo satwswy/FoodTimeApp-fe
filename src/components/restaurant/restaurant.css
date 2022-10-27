@@ -38,6 +38,10 @@
   gap: 10px;
 }
 
+.restaurantAddress span{
+  font-size: 1.1rem;
+}
+
 .restaurantDistance {
   color: #0071c2;
   font-weight: 500;
@@ -82,22 +86,14 @@
 
 .restaurantDetailsPrice {
   flex: 1;
-  background-color: #ebf3ff;
+  background-color: #d9f2e0;
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  justify-content: end;
+  justify-content: center;
 }
-.restaurantDetailsPrice > button {
-  border: none;
-  padding: 10px 20px;
-  background-color: #0071c2;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-}
+
 
 .slider{
   position: sticky;
@@ -138,4 +134,45 @@
   font-size: 50px;
   color: lightgray;
   cursor: pointer;
+}
+
+
+.restaurantDetailsPrice > button {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.restaurantDetailsPrice > button:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.restaurantDetailsPrice > button:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }

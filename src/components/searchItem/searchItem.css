@@ -42,15 +42,7 @@
   flex-direction: column;
   gap: 5px;
 }
-.siCheckButton{
-  background-color: #0071c2;
-  color: white;
-  font-weight: bold;
-  padding: 10px 5px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
+
 
 .rest-details-item{
   font-size: 1.2rem;

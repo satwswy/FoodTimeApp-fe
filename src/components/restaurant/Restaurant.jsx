@@ -28,22 +28,22 @@ const Restaurant = () => {
  
   const photos = [
     {
-      src: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707778.jpg?k=56ba0babbcbbfeb3d3e911728831dcbc390ed2cb16c51d88159f82bf751d04c6&o=&hp=1",
+      src: "https://www.dome-restaurant.com/gallery/Images/gallery/gal4.jpg",
     },
     {
-      src: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707367.jpg?k=cbacfdeb8404af56a1a94812575d96f6b80f6740fd491d02c6fc3912a16d8757&o=&hp=1",
+      src: "https://www.augoutdemma.be/wp-content/uploads/2013/10/thehotel-3.jpg",
     },
     {
-      src: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/261708745.jpg?k=1aae4678d645c63e0d90cdae8127b15f1e3232d4739bdf387a6578dc3b14bdfd&o=&hp=1",
+      src: "https://www.daioscovecrete.com/wp-content/uploads/2019/01/dc_ocean_restaurant_terrace_01-1305x870.jpg",
     },
     {
-      src: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707776.jpg?k=054bb3e27c9e58d3bb1110349eb5e6e24dacd53fbb0316b9e2519b2bf3c520ae&o=&hp=1",
+      src: "https://www.daioscovecrete.com/wp-content/uploads/2019/01/dc_pangea_restaurant_indoor_patio_01-1-1570x870.jpg",
     },
     {
-      src: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/261708693.jpg?k=ea210b4fa329fe302eab55dd9818c0571afba2abd2225ca3a36457f9afa74e94&o=&hp=1",
+      src: "https://images.squarespace-cdn.com/content/v1/57aaa5b2e6f2e16320ac4aca/1651452848925-OZQ6KXVRUTBQXZ97OR4F/image-asset.jpeg?format=1500w",
     },
     {
-      src: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/261707389.jpg?k=52156673f9eb6d5d99d3eed9386491a0465ce6f3b995f005ac71abc192dd5827&o=&hp=1",
+      src: "https://cdn.vox-cdn.com/thumbor/ZJMJWfA4wr2KVp9AMCOUjH5OlsI=/0x0:1200x801/1200x800/filters:focal(504x305:696x497)/cdn.vox-cdn.com/uploads/chorus_image/image/52383559/2016_09_14_michaels_001.0.0.jpeg",
     },
   ];
 
@@ -96,11 +96,10 @@ const Restaurant = () => {
           </div>
         )}
         <div className="restaurantWrapper">
-          <button className="bookNow">Reserve or Book Now!</button>
           <h1 className="restaurantTitle">{data.name}</h1>
           <div className="restaurantAddress">
             <FontAwesomeIcon icon={faLocationDot} />
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+            <span>{data.address}</span>
           </div>
           <span className="restaurantDistance">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
