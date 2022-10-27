@@ -44,14 +44,19 @@
 .nav-item.logout{
   color: white;
   margin-left: 10px;
+  cursor: pointer;
 }
 .nav-item svg{
   line-height: 40px;
   color: white;
   position: relative;
   top: 6px;
+  
   /* margin-right: 1rem; */
 
+}
+.nav-item.profile-div{
+  cursor: pointer;
 }
 
 .nav-item:after {
