@@ -56,7 +56,7 @@ const Header = () => {
           </div>
           {user && user.isAdmin && <div className="nav-item">
             <NavLink
-              to="/"
+              to="/admin"
               className="nav-links"
             >
               Admin Page
