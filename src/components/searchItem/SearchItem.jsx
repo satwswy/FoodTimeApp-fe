@@ -11,17 +11,16 @@ const SearchItem = ({item}) => {
         className="siImg"
       />
       <div className="siDesc">
-        <h1 className="siTitle">Restaurant</h1>
-        <div className="rest-details">
+        
           <div className="rest-details-item"> <span className="rest-details-item-span">Restaurant Name :</span>  {item.name}</div>
           <div className="rest-details-item"> <span className="rest-details-item-span">City :</span>  {item.city}</div>
           <div className="rest-details-item"> <span className="rest-details-item-span">Type :</span>  {item.type}</div>
-        </div>
+        
       </div>
       <div className="siDetails">
         <div className="siDetailTexts">
-          <Link to={`/restaurants/${item._id}`}>
-          <button className="siCheckButton">Check Restaurant</button>
+          <Link style={{textDecoration: 'none'}} to={`/restaurants/${item._id}`}>
+          <button className="siCheckButton" role="button">Check Restaurant</button>
           </Link>
         </div>
       </div>
