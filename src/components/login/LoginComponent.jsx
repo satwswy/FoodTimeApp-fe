@@ -43,7 +43,7 @@ const LoginComponent = () => {
                     </Form.Group>
                     <Form.Group className="mb-3" >
                         <Form.Label className='label'>Password</Form.Label>
-                        <Form.Control id="password" onChange={handleChange} className='login-text' type="text" placeholder="Password" />
+                        <Form.Control id="password" onChange={handleChange} className='login-text' type="password" placeholder="Password" />
                     </Form.Group>
                     <Button disabled={loading} onClick={handleClick} className='login-button' variant="primary" type="submit" >
                         <span className='span-log'>Login</span>
