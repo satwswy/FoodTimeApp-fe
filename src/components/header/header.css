@@ -69,10 +69,11 @@
 	color: #eee;
 	visibility: hidden;
 	opacity: 0;
-	font-size: 1.8rem;
+	font-size: 1.7rem;
 }
 .nav-close-btn{
   margin-right: 15px;
+  
 }
 
 @media only screen and (max-width: 1024px) {
@@ -80,21 +81,22 @@
 		visibility: visible;
 		opacity: 1;
 	}
-
+  .nav-logo{display: none;}
+  .nav-close-btn{margin-left: 10px;}
     .navbar .nav-container {
 		position: fixed;
 		top: 0;
 		left: 0;
-		height: 100%;
+		height: 50%;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-evenly;
 		gap: 1.5rem;
-		background-color:  #1f5156;
+		background-color:  rgb(71, 85, 80);
 		transform: translateY(-100vh);
-    font-size: 1.8rem;
+    font-size: 1.3rem;
 	}
 
 	.navbar .responsive_nav {
