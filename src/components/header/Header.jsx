@@ -7,12 +7,16 @@ import { AuthContext } from "../../context/AuthContext";
 
 const Header = () => {
 
-  const { user } = useContext(AuthContext);
+  const { user,loading, error, dispatch } = useContext(AuthContext);
   const navRef = useRef();
 
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive_nav")
   }
+
+  const handleClick = () => {
+    dispatch({ type: "LOGOUT" });
+};
   return (
     <>
       <nav className="navbar">
@@ -79,6 +83,9 @@ const Header = () => {
             </svg> <span className="username-span">{user.username}</span>
             
           </div>
+          <div className="nav-item logout" onClick={handleClick}>
+              Logout
+            </div>
           </>}
           <button className="nav-btn nav-close-btn" onClick={showNavbar}>
             <FaTimes />

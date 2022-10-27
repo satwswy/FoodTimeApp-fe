@@ -41,6 +41,10 @@
   /* margin-right: 1rem; */
 
 }
+.nav-item.logout{
+  color: white;
+  margin-left: 10px;
+}
 .nav-item svg{
   line-height: 40px;
   color: white;
