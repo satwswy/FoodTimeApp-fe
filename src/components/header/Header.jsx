@@ -17,6 +17,7 @@ const Header = () => {
   const handleClick = () => {
     dispatch({ type: "LOGOUT" });
 };
+
   return (
     <>
       <nav className="navbar">
@@ -53,6 +54,14 @@ const Header = () => {
               Blog
             </NavLink>
           </div>
+          {user && user.isAdmin && <div className="nav-item">
+            <NavLink
+              to="/"
+              className="nav-links"
+            >
+              Admin Page
+            </NavLink>
+          </div>}
           <div className="nav-item">
             <NavLink
               to="/"
