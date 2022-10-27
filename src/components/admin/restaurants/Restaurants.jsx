@@ -25,7 +25,6 @@ const Restaurants = () => {
     const [show, setShow] = useState(false);
     const [tables, setTables] = useState([]);
 
-    console.log(tables)
 
     function handleNameChange(e) {
         setName(e.target.value)
