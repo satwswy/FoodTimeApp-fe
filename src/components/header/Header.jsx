@@ -59,7 +59,7 @@ const Header = () => {
               to="/admin"
               className="nav-links"
             >
-              Admin Page
+              Management
             </NavLink>
           </div>}
           <div className="nav-item">
