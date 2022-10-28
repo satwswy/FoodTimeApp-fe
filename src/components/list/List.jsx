@@ -11,9 +11,27 @@ const List = () => {
   const [type, setType] = useState([location.state.type]);
   const [dates, setDates] = useState(location.state.dates);
   const [options, setOptions] = useState(location.state.options);
+  const [fetchUrl, setFetchUrl] = useState('/restaurants')
 
-  const {data, loading, error, reFetch} = useFetch(`/restaurants`)
+  const {data, loading, error, reFetch} = useFetch(fetchUrl)
   const handleClick = () =>{
+    let searchUrl = '/restaurants'
+    // check if city is not empty
+    if(city){
+      searchUrl = searchUrl + '?city=' + city
+    }
+
+    if(type.length >0){
+      searchUrl = searchUrl + city ? '&' : '?' + 'type=' + type[0]
+      // figure out how to get something like 
+      // ?type=burger
+      // or
+      // ?type=burger,pizza,steak
+    }
+
+    // after checking everything, save the result in the state
+    setFetchUrl(searchUrl)
+
     reFetch();
   }
   
@@ -121,7 +139,7 @@ const List = () => {
                 </div>
               </div>
             </div>
-            <button>Search</button>
+            <button onClick={handleClick}>Search</button>
           </div>
           <div className="listResult">
             {loading ? "loading" : <>
