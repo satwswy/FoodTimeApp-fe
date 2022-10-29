@@ -55,9 +55,9 @@ console.log(searchUrl)
 
 
   const toggleType = (singleType) => {
-    const singleTypeIndex = type.findIndex(t => t === singleType) // this is giving me the position of the element I clicked on
+    const singleTypeIndex = type.findIndex(t => t === singleType) 
     let copyOfType = [...type]
-    if (singleTypeIndex >= 0) { // this means the element has been found
+    if (singleTypeIndex >= 0) { 
       copyOfType.splice(singleTypeIndex, 1)
     } else {
       copyOfType.push(singleType)
