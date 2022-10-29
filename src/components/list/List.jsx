@@ -23,41 +23,41 @@ const List = () => {
   // if (!city && type[0] !== '' && type.length === 1) {
   //   searchUrl = searchUrl + '?type=' + type 
   // }
- 
-  const { data, loading, error, reFetch } = useFetch(fetchUrl)
-  useEffect(()=>{
-    updateSearch()
-  },[city,type])
 
-  const updateSearch = ()=>{
+  const { data, loading, error, reFetch } = useFetch(fetchUrl)
+  useEffect(() => {
+    updateSearch()
+  }, [city, type])
+
+  const updateSearch = () => {
     let searchUrl = '/restaurants'
     // check if city is not empty
-    if(city){
+    if (city) {
       searchUrl = searchUrl + '?city=' + city
     }
 
-    if(type.length >1 || type[0]!=='' ){
-     city ? searchUrl = searchUrl + '?city=' + city+ '&type='+type[1]: searchUrl = searchUrl +  '?type=' + type[1] 
-    // figure out how to get something like 
-    // ?type=burger
-    // or
-    // ?type=burger,pizza,steak
+    if (type.length > 1 || type[0] !== '') {
+      city ? searchUrl = searchUrl + '?city=' + city + '&type=' + type[1] : searchUrl = searchUrl + '?type=' + type[1]
+      // figure out how to get something like 
+      // ?type=burger
+      // or
+      // ?type=burger,pizza,steak
     }
 
     // after checking everything, save the result in the state
     setFetchUrl(searchUrl)
-console.log(searchUrl)
+    console.log(searchUrl)
   }
   const handleClick = () => {
-  
+
     reFetch();
   }
 
 
   const toggleType = (singleType) => {
-    const singleTypeIndex = type.findIndex(t => t === singleType) 
+    const singleTypeIndex = type.findIndex(t => t === singleType)
     let copyOfType = [...type]
-    if (singleTypeIndex >= 0) { 
+    if (singleTypeIndex >= 0) {
       copyOfType.splice(singleTypeIndex, 1)
     } else {
       copyOfType.push(singleType)
@@ -75,7 +75,7 @@ console.log(searchUrl)
               <label>city</label>
               <input placeholder={city || 'Add a city'} type="text" onChange={e => {
                 setCity(e.target.value)
-                
+
               }} />
             </div>
             <div className="lsItem">
