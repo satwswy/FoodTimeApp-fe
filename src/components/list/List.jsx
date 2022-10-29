@@ -1,45 +1,63 @@
 import "./list.css";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DatePicker from 'react-datepicker'
 import SearchItem from "../../components/searchItem/SearchItem";
 import useFetch from "../../hooks/useFetch.js"
+import { ContactPageSharp } from "@mui/icons-material";
 
 const List = () => {
   const location = useLocation();
   const [city, setCity] = useState(location.state.city);
-  const [type, setType] = useState([location.state.type]);
+  const [type, setType] = useState([location.state.type ? location.state.type : '']);
   const [dates, setDates] = useState(location.state.dates);
   const [options, setOptions] = useState(location.state.options);
   const [fetchUrl, setFetchUrl] = useState('/restaurants')
 
-  const {data, loading, error, reFetch} = useFetch(fetchUrl)
-  const handleClick = () =>{
+
+  // if (city && type[0] === '' && type.length === 1) {
+  //   searchUrl = searchUrl + '?city=' + city
+  // }if (city && type[0] !== '' && type.length === 1) {
+  //   searchUrl = searchUrl + '?type=' + type + '&city=' +city
+  // }
+  // if (!city && type[0] !== '' && type.length === 1) {
+  //   searchUrl = searchUrl + '?type=' + type 
+  // }
+ 
+  const { data, loading, error, reFetch } = useFetch(fetchUrl)
+  useEffect(()=>{
+    updateSearch()
+  },[city,type])
+
+  const updateSearch = ()=>{
     let searchUrl = '/restaurants'
     // check if city is not empty
     if(city){
       searchUrl = searchUrl + '?city=' + city
     }
 
-    if(type.length >0){
-      searchUrl = searchUrl + city ? '&' : '?' + 'type=' + type[0]
-      // figure out how to get something like 
-      // ?type=burger
-      // or
-      // ?type=burger,pizza,steak
+    if(type.length >1 || type[0]!=='' ){
+     city ? searchUrl = searchUrl + '?city=' + city+ '&type='+type[1]: searchUrl = searchUrl +  '?type=' + type[1] 
+    // figure out how to get something like 
+    // ?type=burger
+    // or
+    // ?type=burger,pizza,steak
     }
 
     // after checking everything, save the result in the state
     setFetchUrl(searchUrl)
-
+console.log(searchUrl)
+  }
+  const handleClick = () => {
+  
     reFetch();
   }
-  
+
 
   const toggleType = (singleType) => {
     const singleTypeIndex = type.findIndex(t => t === singleType) // this is giving me the position of the element I clicked on
     let copyOfType = [...type]
-    if(singleTypeIndex >= 0) { // this means the element has been found
+    if (singleTypeIndex >= 0) { // this means the element has been found
       copyOfType.splice(singleTypeIndex, 1)
     } else {
       copyOfType.push(singleType)
@@ -55,15 +73,18 @@ const List = () => {
             <h1 className="lsTitle">Search</h1>
             <div className="lsItem">
               <label>city</label>
-              <input placeholder={city || 'Add a city'} type="text" onChange={(e) => setCity(e.target.value)}/>
+              <input placeholder={city || 'Add a city'} type="text" onChange={e => {
+                setCity(e.target.value)
+                
+              }} />
             </div>
             <div className="lsItem">
               <label>Check-in Date</label>
               <DatePicker
-              className="select-date2"
-              selected={dates || new Date()}
-              onChange={dates => setDates(dates)}
-              minDate={new Date()}
+                className="select-date2"
+                selected={dates || new Date()}
+                onChange={dates => setDates(dates)}
+                minDate={new Date()}
               />
             </div>
             <div className="lsItem">
@@ -106,7 +127,7 @@ const List = () => {
                   <input
                     type="checkbox"
                     className="lsOptionInput"
-                    checked={type.includes("burgers") ? true : false} 
+                    checked={type.includes("burgers") ? true : false}
                     onChange={e => toggleType('burgers')}
                   />
                 </div>
@@ -143,10 +164,10 @@ const List = () => {
           </div>
           <div className="listResult">
             {loading ? "loading" : <>
-            {data.map(item=>(
-            <SearchItem item={item} key={item._id}/>
-            ))}
-            </>}       
+              {data.map(item => (
+                <SearchItem item={item} key={item._id} />
+              ))}
+            </>}
           </div>
         </div>
       </div>
