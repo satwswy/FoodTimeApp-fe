@@ -71,9 +71,9 @@ const Tables = () => {
                                             <span className="itemKey">Table Numbers:</span>
                                             <span className="itemValue">
                                                 <div className="tn-div">
-                                                {table.tableNumbers.map(current => 
-                                                    <div >{current.number} ,</div> 
-                                                )}
+                                                    {table.tableNumbers.map(current =>
+                                                        <div >{current.number} ,</div>
+                                                    )}
                                                 </div>
                                             </span>
                                         </div>
@@ -82,68 +82,18 @@ const Tables = () => {
                             </div>
                         </div>
 
-                        {/* <Modal show={show} onHide={handleClose}>
-                            <Modal.Header closeButton>
-                                <Modal.Title>Modal heading</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>
-                                <Form>
-                                    <Form.Group>
-                                        <Form.Label>Name</Form.Label>
-                                        <Form.Control
-                                            type="text"
-                                            placeholder="name *"
-                                            name="name"
-                                            value={name}
-                                            onChange={handleNameChange}
-                                            required
-                                        />
-                                    </Form.Group>
-                                    <Form.Group>
-                                        <Form.Label>Type</Form.Label>
-                                        <Form.Control
-                                            type="text"
-                                            placeholder="Type *"
-                                            name="Type"
-                                            value={type}
-                                            onChange={handleType}
-                                            required
-                                        />
-                                    </Form.Group>
-                                    <Form.Group>
-                                        <Form.Label>Address</Form.Label>
-                                        <Form.Control
-                                            type="text"
-                                            placeholder="Address *"
-                                            name="Address"
-                                            value={address}
-                                            onChange={handleAddress}
-                                            min="18" max="100"
-                                            required
-                                        />
-                                    </Form.Group>
-                                    <Form.Group>
-                                        <Form.Label>Description</Form.Label>
-                                        <Form.Control
-                                            type="text"
-                                            placeholder="Desc *"
-                                            name="Desc"
-                                            value={desc}
-                                            onChange={handleDesc}
-                                            required
-                                        />
-                                    </Form.Group>
-                                </Form>
-                            </Modal.Body>
-                            <Modal.Footer>
-                                <Button variant="secondary" onClick={handleClose}>
-                                    Close
-                                </Button>
-                                <Button variant="primary" onClick={update}>
-                                    Save Changes
-                                </Button>
-                            </Modal.Footer>
-                        </Modal> */}
+                        <form>
+                            <label>Name</label>
+                            <input
+                                type="text"
+                                placeholder="name *"
+                                name="name"
+                                required
+                            />
+
+
+
+                        </form>
                     </>
                     )}
                 </div>
