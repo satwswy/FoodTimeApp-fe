@@ -7,18 +7,19 @@ import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import axios from "axios";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 import useFetch from "../../../hooks/useFetch";
+import { IdContext } from "../../../context/IdContext";
 
 
 const Tables = () => {
-
+    const { id } = useContext(IdContext);
     const location = useLocation();
-    const [restaurant, setRestaurant] = useState(location.state.restaurantId);
+    // const [restaurant, setRestaurant] = useState(location.state.restaurantId);
     const { user } = useContext(AuthContext);
-    const id = user._id
-    const { data, loading, error, reFetch } = useFetch(`restaurants/table/${restaurant}`)
+    const userId = user._id
+    const { data, loading, error, reFetch } = useFetch(`restaurants/table/${id}`)
     const [name, setName] = useState("");
     const [title, setTitle] = useState("");
     const [type, setType] = useState("");
@@ -27,7 +28,9 @@ const Tables = () => {
     const [newid, setNewid] = useState("");
     const [show, setShow] = useState(false);
     const [tables, setTables] = useState([]);
-
+    
+    console.log(id)
+    const navigate = useNavigate();
     function handleTitle(e) {
         setTitle(e.target.value)
     }
@@ -40,16 +43,17 @@ const Tables = () => {
     }
     const update = async () => {
         try {
-            const id = newid
+            const id2 = newid
             const data = {};
             if (title) data.title = title;
             if (maxPeople) data.maxPeople = maxPeople;
             if (desc) data.desc = desc
-            await axios.put(`/tables/${id}`, data);
+            await axios.put(`/tables/${id2}`, data);
         } catch (error) {
             console.log(error)
         }
         handleClose()
+        reFetch()
     }
 
 
@@ -105,9 +109,9 @@ const Tables = () => {
                         </div>
 
                         {table._id===newid && show && <div className="create">
-                            <h2>Edit User</h2>
+                            <h2>Edit Table</h2>
                             <form>
-                                <label>Username:</label>
+                                <label>Title:</label>
                                 <input
                                     type="text"
                                     value={title}

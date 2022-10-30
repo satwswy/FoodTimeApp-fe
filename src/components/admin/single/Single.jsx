@@ -24,7 +24,7 @@ const Single = () => {
   const [show, setShow] = useState(false);
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
-  const [author, setAuthor] = useState('mario');
+
 
   function handleUserNameChange(e) {
     setUsername(e.target.value)

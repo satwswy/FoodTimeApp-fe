@@ -5,15 +5,18 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { SearchContextProvider } from "./context/SearchContext";
 import { AuthContextProvider } from "./context/AuthContext";
+import { IdContextProvider } from "./context/IdContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <IdContextProvider>
     <AuthContextProvider>
       <SearchContextProvider>
         <App />
       </SearchContextProvider>
     </AuthContextProvider>
+    </IdContextProvider>
   </React.StrictMode>
 );
 
