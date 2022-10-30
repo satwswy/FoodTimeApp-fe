@@ -71,10 +71,6 @@ const Restaurants = () => {
                         <div className="top" key={index}>
                             <div className="left">
                                 <div className="buttons">
-                                <div className="editButton" onClick={event => {
-                                    handleShow();
-                                    setNewid(restaurant._id);
-                                }}>Edit</div>
                                 <div className="tablesButton" onClick={()=>{
                                     navigate("/tables", {state: {restaurantId: restaurant._id}})
                                 }}  > Tables </div>
@@ -82,6 +78,10 @@ const Restaurants = () => {
                                     navigate("/reservations", {state: {restaurantId: restaurant._id}})
                                 }}  > Reservations </div>
                                 </div>
+                                <div className="editButton" onClick={event => {
+                                    handleShow();
+                                    setNewid(restaurant._id);
+                                }}>Edit</div>
                                 <h1 className="title">Information</h1>
                                 <div className="item">
                                     <img
