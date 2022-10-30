@@ -97,13 +97,11 @@ const Single = () => {
               <label>Username:</label>
               <input
                 type="text"
-                required
                 value={username}
                 onChange={handleUserNameChange}
               />
               <label>Email:</label>
               <input
-                required
                 value={email}
                 onChange={handleEmail}
               />
@@ -111,7 +109,6 @@ const Single = () => {
               <input
                 type="number"
                 min="0"
-                required
                 value={age}
                 onChange={handleAgeChange}
               />
