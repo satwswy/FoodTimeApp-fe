@@ -13,17 +13,7 @@ import useFetch from "../../../hooks/useFetch";
 
 
 const Tables = () => {
-    //  name: { type: String, required: true },
-    //   type: { type: String, required: true },
-    //   city: { type: String, required: true },
-    //   address: { type: String, required: true },
-    //   distance: { type: String, required: true },
-    //   photos: { type: [String] },
-    //   title: { type: String, required: true },
-    //   desc: { type: String, required: true },
-    //   rating: { type: Number, min: 0, max: 5 },
-    //   tables: { type: [String] },
-    //   featured: { type: Boolean, default: false },
+
     const location = useLocation();
     const [restaurant, setRestaurant] = useState(location.state.restaurantId);
     const { user } = useContext(AuthContext);
