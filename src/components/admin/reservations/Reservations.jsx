@@ -1,12 +1,6 @@
 import "./reservations.scss";
-import Sidebar from "../sidebar/Sidebar";
-import { useContext } from "react";
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
-import axios from "axios";
-import { useEffect } from "react";
+
 
 import { useLocation } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
