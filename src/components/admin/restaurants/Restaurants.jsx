@@ -18,18 +18,23 @@ const Restaurants = () => {
     const id = user._id
     const { data, loading, error, reFetch } = useFetch(`/users/rest/${id}`)
     const [name, setName] = useState("");
+    const [city, setCity] = useState("");
     const [type, setType] = useState("");
     const [address, setAddress] = useState("");
     const [desc, setDesc] = useState("");
     const [newid, setNewid] = useState("");
     const [show, setShow] = useState(false);
     const [tables, setTables] = useState([]);
-
+    const [title, setTitle] = useState('');
+    const [body, setBody] = useState('');
+    const [author, setAuthor] = useState('mario');
 
     function handleNameChange(e) {
         setName(e.target.value)
     }
-
+    function handleCityChange(e) {
+        setCity(e.target.value)
+    }
     function handleType(e) {
         setType(e.target.value)
     }
@@ -46,6 +51,7 @@ const Restaurants = () => {
             const id = newid
             const data = {};
             if (name) data.name = name;
+            if (city) data.city = city;
             if (type) data.type = type;
             if (address) data.address = address
             if (desc) data.desc = desc
@@ -123,53 +129,44 @@ const Restaurants = () => {
                             </div>
                         </div>
 
-
-                        <form>
-                            <label>Name</label>
-                            <input
-                                type="text"
-                                placeholder="name *"
-                                name="name"
-                                value={name}
-                                onChange={handleNameChange}
-                                required
-                            />
-
-
-                            <label>Type</label>
-                            <input
-                                type="text"
-                                placeholder="Type *"
-                                name="Type"
-                                value={type}
-                                onChange={handleType}
-                                required
-                            />
-
-
-                            <label>Address</label>
-                            <input
-                                type="text"
-                                placeholder="Address *"
-                                name="Address"
-                                value={address}
-                                onChange={handleAddress}
-                                min="18" max="100"
-                                required
-                            />
-
-
-                            <label>Description</label>
-                            <input
-                                type="text"
-                                placeholder="Desc *"
-                                name="Desc"
-                                value={desc}
-                                onChange={handleDesc}
-                                required
-                            />
-
-                        </form>
+                        {show && <div className="create">
+                            <h2>Edit Restaurant</h2>
+                            <form>
+                                <label>Restaurant Name:</label>
+                                <input
+                                    type="text"
+                                    required
+                                    value={name}
+                                    onChange={handleNameChange}
+                                />
+                                <label>City:</label>
+                                <input
+                                    required
+                                    value={city}
+                                    onChange={handleCityChange}
+                                />
+                                <label>Type:</label>
+                                <input
+                                    required
+                                    value={type}
+                                    onChange={handleType}
+                                />
+                                <label>Address:</label>
+                                <input
+                                    required
+                                    value={address}
+                                    onChange={handleAddress}
+                                />
+                                <label>Description:</label>
+                                <input
+                                    required
+                                    value={desc}
+                                    onChange={handleDesc}
+                                />
+                                <button onClick={update}>Update</button>
+                                <button onClick={handleClose}>Close</button>
+                            </form>
+                        </div>}
 
                     </>
                     )}

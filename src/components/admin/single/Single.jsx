@@ -22,6 +22,9 @@ const Single = () => {
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
   const [show, setShow] = useState(false);
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
+  const [author, setAuthor] = useState('mario');
 
   function handleUserNameChange(e) {
     setUsername(e.target.value)
@@ -88,27 +91,33 @@ const Single = () => {
               </div>
             </div>
           </div>
-          <form>
-        <label>Name</label>
-        <input
-          type="text"
-          placeholder="name *"
-          name="name"
-
-          required
+          <div className="create">
+      <h2>Add a New Blog</h2>
+      <form>
+        <label>Blog title:</label>
+        <input 
+          type="text" 
+          required 
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
         />
-
-
-        <label>Type</label>
-        <input
-          type="text"
-          placeholder="Type *"
-          name="Type"
-
+        <label>Blog body:</label>
+        <textarea
           required
-        />
-
+          value={body}
+          onChange={(e) => setBody(e.target.value)}
+        ></textarea>
+        <label>Blog author:</label>
+        <select
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+        >
+          <option value="mario">mario</option>
+          <option value="yoshi">yoshi</option>
+        </select>
+        <button>Add Blog</button>
       </form>
+    </div>
         </div>
       </div>
      
