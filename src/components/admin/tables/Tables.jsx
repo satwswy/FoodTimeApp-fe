@@ -20,15 +20,37 @@ const Tables = () => {
     const id = user._id
     const { data, loading, error, reFetch } = useFetch(`restaurants/table/${restaurant}`)
     const [name, setName] = useState("");
+    const [title, setTitle] = useState("");
     const [type, setType] = useState("");
-    const [address, setAddress] = useState("");
+    const [maxPeople, setMaxPeople] = useState("");
     const [desc, setDesc] = useState("");
     const [newid, setNewid] = useState("");
     const [show, setShow] = useState(false);
     const [tables, setTables] = useState([]);
 
+    function handleTitle(e) {
+        setTitle(e.target.value)
+    }
 
-
+    function handlemaxPeople(e) {
+        setMaxPeople(e.target.value)
+    }
+    function handleDesc(e) {
+        setDesc(e.target.value)
+    }
+    const update = async () => {
+        try {
+            const id = newid
+            const data = {};
+            if (title) data.title = title;
+            if (maxPeople) data.maxPeople = maxPeople;
+            if (desc) data.desc = desc
+            await axios.put(`/tables/${id}`, data);
+        } catch (error) {
+            console.log(error)
+        }
+        handleClose()
+    }
 
 
 
@@ -82,18 +104,33 @@ const Tables = () => {
                             </div>
                         </div>
 
-                        <form>
-                            <label>Name</label>
-                            <input
-                                type="text"
-                                placeholder="name *"
-                                name="name"
-                                required
-                            />
-
-
-
-                        </form>
+                        {table._id===newid && show && <div className="create">
+                            <h2>Edit User</h2>
+                            <form>
+                                <label>Username:</label>
+                                <input
+                                    type="text"
+                                    value={title}
+                                    onChange={handleTitle}
+                                />
+                                <label>Description:</label>
+                                <input
+                                    type="text"
+                                    value={desc}
+                                    onChange={handleDesc}
+                                />
+                                <label>maxPeople:</label>
+                                <input
+                                    type="number"
+                                    min="0"
+                                    max="20"
+                                    value={maxPeople}
+                                    onChange={handlemaxPeople}
+                                />
+                                <button onClick={update}>Update</button>
+                                <button onClick={handleClose}>Close</button>
+                            </form>
+                        </div>}
                     </>
                     )}
                 </div>
