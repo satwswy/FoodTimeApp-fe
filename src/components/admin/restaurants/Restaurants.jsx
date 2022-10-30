@@ -71,18 +71,18 @@ const Restaurants = () => {
                         <div className="top" key={index}>
                             <div className="left">
                                 <div className="buttons">
-                                <div className="tablesButton" onClick={()=>{
-                                    navigate("/tables", {state: {restaurantId: restaurant._id}})
-                                }}  > Tables </div>
-                                <div className="reservationsButton" onClick={()=>{
-                                    navigate("/reservations", {state: {restaurantId: restaurant._id}})
-                                }}  > Reservations </div>
-                                 <div className="editButton" onClick={event => {
-                                    handleShow();
-                                    setNewid(restaurant._id);
-                                }}>Edit</div>
+                                    <div className="tablesButton" onClick={() => {
+                                        navigate("/tables", { state: { restaurantId: restaurant._id } })
+                                    }}  > Tables </div>
+                                    <div className="reservationsButton" onClick={() => {
+                                        navigate("/reservations", { state: { restaurantId: restaurant._id } })
+                                    }}  > Reservations </div>
+                                    <div className="editButton" onClick={event => {
+                                        handleShow();
+                                        setNewid(restaurant._id);
+                                    }}>Edit</div>
                                 </div>
-                               
+
                                 <h1 className="title">Information</h1>
                                 <div className="item">
                                     <img
@@ -123,68 +123,54 @@ const Restaurants = () => {
                             </div>
                         </div>
 
-                        <Modal show={show} onHide={handleClose}>
-                            <Modal.Header closeButton>
-                                <Modal.Title>Modal heading</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>
-                                <Form>
-                                    <Form.Group>
-                                        <Form.Label>Name</Form.Label>
-                                        <Form.Control
-                                            type="text"
-                                            placeholder="name *"
-                                            name="name"
-                                            value={name}
-                                            onChange={handleNameChange}
-                                            required
-                                        />
-                                    </Form.Group>
-                                    <Form.Group>
-                                        <Form.Label>Type</Form.Label>
-                                        <Form.Control
-                                            type="text"
-                                            placeholder="Type *"
-                                            name="Type"
-                                            value={type}
-                                            onChange={handleType}
-                                            required
-                                        />
-                                    </Form.Group>
-                                    <Form.Group>
-                                        <Form.Label>Address</Form.Label>
-                                        <Form.Control
-                                            type="text"
-                                            placeholder="Address *"
-                                            name="Address"
-                                            value={address}
-                                            onChange={handleAddress}
-                                            min="18" max="100"
-                                            required
-                                        />
-                                    </Form.Group>
-                                    <Form.Group>
-                                        <Form.Label>Description</Form.Label>
-                                        <Form.Control
-                                            type="text"
-                                            placeholder="Desc *"
-                                            name="Desc"
-                                            value={desc}
-                                            onChange={handleDesc}
-                                            required
-                                        />
-                                    </Form.Group>
-                                </Form>
-                            </Modal.Body>
-                            <Modal.Footer>
-                                <Button variant="secondary" onClick={handleClose}>
-                                    Close
-                                </Button>
-                                <Button variant="primary" onClick={update}>
-                                    Save Changes
-                                </Button>
-                            </Modal.Footer>
-                        </Modal>
+
+                        <form>
+                            <label>Name</label>
+                            <input
+                                type="text"
+                                placeholder="name *"
+                                name="name"
+                                value={name}
+                                onChange={handleNameChange}
+                                required
+                            />
+
+
+                            <label>Type</label>
+                            <input
+                                type="text"
+                                placeholder="Type *"
+                                name="Type"
+                                value={type}
+                                onChange={handleType}
+                                required
+                            />
+
+
+                            <label>Address</label>
+                            <input
+                                type="text"
+                                placeholder="Address *"
+                                name="Address"
+                                value={address}
+                                onChange={handleAddress}
+                                min="18" max="100"
+                                required
+                            />
+
+
+                            <label>Description</label>
+                            <input
+                                type="text"
+                                placeholder="Desc *"
+                                name="Desc"
+                                value={desc}
+                                onChange={handleDesc}
+                                required
+                            />
+
+                        </form>
+
                     </>
                     )}
                 </div>
