@@ -2,11 +2,7 @@ import "./restaurants.scss";
 import Sidebar from "../sidebar/Sidebar";
 import { useContext } from "react";
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
 import axios from "axios";
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 import { AuthContext } from "../../../context/AuthContext";
@@ -25,9 +21,6 @@ const Restaurants = () => {
     const [desc, setDesc] = useState("");
     const [newid, setNewid] = useState("");
     const [show, setShow] = useState(false);
-    const [tables, setTables] = useState([]);
-    const [title, setTitle] = useState('');
-    const [body, setBody] = useState('');
   
     function handleNameChange(e) {
         setName(e.target.value)
