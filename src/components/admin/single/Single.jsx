@@ -3,11 +3,7 @@ import Sidebar from "../sidebar/Sidebar";
 import { useContext } from "react";
 
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
 import axios from "axios";
-import { useEffect } from "react";
 import useFetch from "../../../hooks/useFetch";
 import { AuthContext } from "../../../context/AuthContext";
 
@@ -22,8 +18,6 @@ const Single = () => {
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
   const [show, setShow] = useState(false);
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
 
 
   function handleUserNameChange(e) {
