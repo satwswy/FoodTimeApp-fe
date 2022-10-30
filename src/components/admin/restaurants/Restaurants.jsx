@@ -135,31 +135,26 @@ const Restaurants = () => {
                                 <label>Restaurant Name:</label>
                                 <input
                                     type="text"
-                                    required
                                     value={name}
                                     onChange={handleNameChange}
                                 />
                                 <label>City:</label>
                                 <input
-                                    required
                                     value={city}
                                     onChange={handleCityChange}
                                 />
                                 <label>Type:</label>
                                 <input
-                                    required
                                     value={type}
                                     onChange={handleType}
                                 />
                                 <label>Address:</label>
                                 <input
-                                    required
                                     value={address}
                                     onChange={handleAddress}
                                 />
                                 <label>Description:</label>
                                 <input
-                                    required
                                     value={desc}
                                     onChange={handleDesc}
                                 />
