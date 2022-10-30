@@ -14,7 +14,7 @@ import useFetch from "../../../hooks/useFetch";
 
 
 const Tables = () => {
-    
+
     const location = useLocation();
      const [restaurant, setRestaurant] = useState(location.state.restaurantId);
     const { user } = useContext(AuthContext);
@@ -130,7 +130,10 @@ const Tables = () => {
                                     value={maxPeople}
                                     onChange={handlemaxPeople}
                                 />
-                                <button onClick={update}>Update</button>
+                                <button onClick={event => {
+                                        update();
+                                        navigate("/restaurants")
+                                    }}>Update</button>
                                 <button onClick={handleClose}>Close</button>
                             </form>
                         </div>}
