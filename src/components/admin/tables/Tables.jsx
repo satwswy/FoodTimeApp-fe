@@ -1,35 +1,22 @@
 import "./tables.scss";
 import Sidebar from "../sidebar/Sidebar";
-import { useContext } from "react";
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
 import axios from "axios";
 import { useEffect } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { AuthContext } from "../../../context/AuthContext";
-import useFetch from "../../../hooks/useFetch";
+import {  useParams } from "react-router-dom";
+
 
 
 
 const Tables = () => {
 
-    const location = useLocation();
-    //  const [restaurant, setRestaurant] = useState(location.state.restaurantId);
-    const { user } = useContext(AuthContext);
-    const userId = user._id
-    // const { data, loading, error, reFetch } = useFetch(`restaurants/table/${restaurant}`)
-    const [name, setName] = useState("");
+
     const [title, setTitle] = useState("");
-    const [type, setType] = useState("");
     const [maxPeople, setMaxPeople] = useState("");
     const [desc, setDesc] = useState("");
     const [newid, setNewid] = useState("");
     const [show, setShow] = useState(false);
-    const [tables, setTables] = useState([]);
     const [data, setData]= useState([]);
-    const navigate = useNavigate();
 
     const params = useParams();
 
