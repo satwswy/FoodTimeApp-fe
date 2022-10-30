@@ -77,11 +77,12 @@ const Restaurants = () => {
                                 <div className="reservationsButton" onClick={()=>{
                                     navigate("/reservations", {state: {restaurantId: restaurant._id}})
                                 }}  > Reservations </div>
-                                </div>
-                                <div className="editButton" onClick={event => {
+                                 <div className="editButton" onClick={event => {
                                     handleShow();
                                     setNewid(restaurant._id);
                                 }}>Edit</div>
+                                </div>
+                               
                                 <h1 className="title">Information</h1>
                                 <div className="item">
                                     <img
