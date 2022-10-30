@@ -13,41 +13,41 @@ import { AuthContext } from "../../../context/AuthContext";
 
 
 
-const Single =  () => {
+const Single = () => {
   const { user } = useContext(AuthContext);
   const id = user._id
-  const {data, loading, error, reFetch} = useFetch(`/users/${id}`)
+  const { data, loading, error, reFetch } = useFetch(`/users/${id}`)
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
   const [show, setShow] = useState(false);
 
-function handleUserNameChange(e) {
-  setUsername(e.target.value)
-}
-
-function handleEmail(e) {
-  setEmail(e.target.value)
-}
-
-function handleAgeChange(e) {
-  setAge(e.target.value)
-}
-
- const update = async ()=>{
-  try {
-    const id= user._id
-    const data = {};
-    if(username) data.username = username;
-    if(email) data.email = email;
-     if(age) data.age = age
-    await axios.put(`/users/${id}`,data);
-  } catch (error) {
-    console.log(error)
+  function handleUserNameChange(e) {
+    setUsername(e.target.value)
   }
- handleClose()
-}
+
+  function handleEmail(e) {
+    setEmail(e.target.value)
+  }
+
+  function handleAgeChange(e) {
+    setAge(e.target.value)
+  }
+
+  const update = async () => {
+    try {
+      const id = user._id
+      const data = {};
+      if (username) data.username = username;
+      if (email) data.email = email;
+      if (age) data.age = age
+      await axios.put(`/users/${id}`, data);
+    } catch (error) {
+      console.log(error)
+    }
+    handleClose()
+  }
 
 
 
@@ -90,57 +90,18 @@ function handleAgeChange(e) {
           </div>
         </div>
       </div>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group>
-            <Form.Label>Username</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Username *"
-                name="username"
-                value={username}
-                onChange={handleUserNameChange}
-                required
-              />
-            </Form.Group>
-            <Form.Group>
-            <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Email *"
-                name="email"
-                value={email}
-                onChange={handleEmail}
-                required
-              />
-            </Form.Group>
-            <Form.Group>
-            <Form.Label>Age</Form.Label>
-              <Form.Control
-                type="number"
-                placeholder="Age *"
-                name="age"
-                value={age}
-                onChange={handleAgeChange}
-                min="18" max="100"
-                required
-              />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={update}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <form>
+        <label>Name</label>
+        <input
+          type="text"
+          placeholder="name *"
+          name="name"
+          required
+        />
+
+
+
+      </form>
     </>
 
   );
