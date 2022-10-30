@@ -60,7 +60,7 @@ function handleAgeChange(e) {
         <div className="singleContainer">
           <div className="top">
             <div className="left">
-              <div className="editButton" onClick={handleShow}>Edit</div>
+              <div className="editSingleButton" onClick={handleShow}>Edit</div>
               <h1 className="title">Information</h1>
               <div className="item">
                 <img
