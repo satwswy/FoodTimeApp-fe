@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import axios from "axios";
 import { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 import useFetch from "../../../hooks/useFetch";
 
@@ -16,10 +16,10 @@ import useFetch from "../../../hooks/useFetch";
 const Tables = () => {
 
     const location = useLocation();
-     const [restaurant, setRestaurant] = useState(location.state.restaurantId);
+    //  const [restaurant, setRestaurant] = useState(location.state.restaurantId);
     const { user } = useContext(AuthContext);
     const userId = user._id
-    const { data, loading, error, reFetch } = useFetch(`restaurants/table/${restaurant}`)
+    // const { data, loading, error, reFetch } = useFetch(`restaurants/table/${restaurant}`)
     const [name, setName] = useState("");
     const [title, setTitle] = useState("");
     const [type, setType] = useState("");
@@ -28,8 +28,39 @@ const Tables = () => {
     const [newid, setNewid] = useState("");
     const [show, setShow] = useState(false);
     const [tables, setTables] = useState([]);
-    
+    const [data, setData]= useState([]);
     const navigate = useNavigate();
+
+    const params = useParams();
+
+    console.log(params);
+    useEffect(() => {
+
+        fetchUsers()
+
+    }, [])
+    const fetchUsers = async () => {
+        try {
+            const response =
+                await fetch(`http://localhost:8800/api/restaurants/table/${params.id}`, {
+                    method: 'GET',
+                    headers: {
+                        "Content-Type": "application/json",
+                    }
+                })
+            if (response.ok) {
+                const tablesList = await response.json()
+                setData(tablesList)
+                console.log(tablesList)
+            } else {
+                console.log('Error in fetching')
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
     function handleTitle(e) {
         setTitle(e.target.value)
     }
@@ -129,10 +160,7 @@ const Tables = () => {
                                     value={maxPeople}
                                     onChange={handlemaxPeople}
                                 />
-                                <button onClick={event => {
-                                        update();
-                                        navigate("/restaurants")
-                                    }}>Update</button>
+                                <button onClick={update}>Update</button>
                                 <button onClick={handleClose}>Close</button>
                             </form>
                         </div>}

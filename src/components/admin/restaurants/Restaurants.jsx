@@ -78,7 +78,7 @@ const Restaurants = () => {
                             <div className="left">
                                 <div className="buttons">
                                     <div className="tablesButton" onClick={() => {
-                                        navigate("/tables", { state: { restaurantId: restaurant._id } })
+                                        navigate(`/tables/${restaurant._id}`, { state: { restaurantId: restaurant._id } })
                                         
                                         
                                     }}  > Tables </div>

@@ -64,7 +64,7 @@ const Pages = () => {
               }
             />
             <Route
-              path="/tables"
+              path="/tables/:id"
               element={
                 <ProtectedRoute>
                   <Tables />
