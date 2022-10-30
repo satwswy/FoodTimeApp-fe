@@ -43,7 +43,7 @@ const Tables = () => {
                     {data.map((table, index) => <>
                         <div className="top" key={index}>
                             <div className="left">
-                                <div className="editButton" onClick={event => {
+                                <div className="editTablesButton" onClick={event => {
                                     handleShow();
                                     setNewid(table._id);
                                 }}>Edit</div>
