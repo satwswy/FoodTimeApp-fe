@@ -52,7 +52,6 @@ const Tables = () => {
             console.log(error)
         }
         handleClose()
-        reFetch()
     }
 
 
