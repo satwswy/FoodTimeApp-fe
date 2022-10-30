@@ -88,20 +88,30 @@ const Single = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <form>
+          <form>
         <label>Name</label>
         <input
           type="text"
           placeholder="name *"
           name="name"
+
           required
         />
 
 
+        <label>Type</label>
+        <input
+          type="text"
+          placeholder="Type *"
+          name="Type"
+
+          required
+        />
 
       </form>
+        </div>
+      </div>
+     
     </>
 
   );
