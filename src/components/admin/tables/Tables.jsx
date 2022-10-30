@@ -33,7 +33,7 @@ const Tables = () => {
 
     const params = useParams();
 
-    console.log(params);
+
     useEffect(() => {
 
         fetchUsers()
@@ -51,7 +51,6 @@ const Tables = () => {
             if (response.ok) {
                 const tablesList = await response.json()
                 setData(tablesList)
-                console.log(tablesList)
             } else {
                 console.log('Error in fetching')
             }
