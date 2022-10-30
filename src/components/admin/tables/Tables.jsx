@@ -10,16 +10,16 @@ import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 import useFetch from "../../../hooks/useFetch";
-import { IdContext } from "../../../context/IdContext";
+
 
 
 const Tables = () => {
-    const { id } = useContext(IdContext);
+    
     const location = useLocation();
-    // const [restaurant, setRestaurant] = useState(location.state.restaurantId);
+     const [restaurant, setRestaurant] = useState(location.state.restaurantId);
     const { user } = useContext(AuthContext);
     const userId = user._id
-    const { data, loading, error, reFetch } = useFetch(`restaurants/table/${id}`)
+    const { data, loading, error, reFetch } = useFetch(`restaurants/table/${restaurant}`)
     const [name, setName] = useState("");
     const [title, setTitle] = useState("");
     const [type, setType] = useState("");
@@ -29,7 +29,6 @@ const Tables = () => {
     const [show, setShow] = useState(false);
     const [tables, setTables] = useState([]);
     
-    console.log(id)
     const navigate = useNavigate();
     function handleTitle(e) {
         setTitle(e.target.value)

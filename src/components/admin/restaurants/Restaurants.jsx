@@ -10,7 +10,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 import { AuthContext } from "../../../context/AuthContext";
-import { IdContext } from "../../../context/IdContext";
+
 
 
 const Restaurants = () => {
@@ -28,7 +28,7 @@ const Restaurants = () => {
     const [tables, setTables] = useState([]);
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
-    const {dispatch} = useContext(IdContext)
+  
     function handleNameChange(e) {
         setName(e.target.value)
     }
@@ -79,7 +79,7 @@ const Restaurants = () => {
                                 <div className="buttons">
                                     <div className="tablesButton" onClick={() => {
                                         navigate("/tables", { state: { restaurantId: restaurant._id } })
-                                        dispatch({type:"NEW_Id", payload:{id:restaurant._id}});
+                                        
                                         
                                     }}  > Tables </div>
                                     <div className="reservationsButton" onClick={() => {
