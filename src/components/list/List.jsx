@@ -46,7 +46,6 @@ const List = () => {
 
     // after checking everything, save the result in the state
     setFetchUrl(searchUrl)
-    console.log(searchUrl)
   }
   const handleClick = () => {
 
