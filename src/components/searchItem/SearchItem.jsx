@@ -14,7 +14,7 @@ const SearchItem = ({item}) => {
         
           <div className="rest-details-item"> <span className="rest-details-item-span">Restaurant Name :</span>  {item.name}</div>
           <div className="rest-details-item"> <span className="rest-details-item-span">City :</span>  {item.city}</div>
-          <div className="rest-details-item"> <span className="rest-details-item-span">Type :</span>  {item.type}</div>
+          <div className="rest-details-item"> <span className="rest-details-item-span">Type :</span>  {item.type.map(t=>t+ " "+",")}</div>
         
       </div>
       <div className="siDetails">
