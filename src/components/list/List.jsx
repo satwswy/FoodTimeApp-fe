@@ -32,12 +32,12 @@ const List = () => {
   const updateSearch = () => {
     let searchUrl = '/restaurants'
     // check if city is not empty
-    if (city) {
+    if (city && type[0]==='' && type.length === 1) {
       searchUrl = searchUrl + '?city=' + city
     }
 
     if (type.length > 1 || type[0] !== '') {
-      city ? searchUrl = searchUrl + '?city=' + city + '&type=' + type[1] : searchUrl = searchUrl + '?type=' + type[1]
+      city ? searchUrl = searchUrl + '?city=' + city + '&type=' + type.map(c=>c+",") : searchUrl = searchUrl + '?type=' + type.map(c=>c+",")
       // figure out how to get something like 
       // ?type=burger
       // or
