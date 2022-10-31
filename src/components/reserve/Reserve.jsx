@@ -86,7 +86,7 @@ console.log('DATE SEARCHED: ', typeof dates)
           <div className="rItem" key={item._id}>
             <div className="rItemInfo">
               <div className="rTitle">{item.title}</div>
-              <div className="rDesc">{item.desc}</div>
+              {/* <div className="rDesc">{item.desc}</div> */}
               <div className="rMax">
                 Max people: <b>{item.maxPeople}</b>
               </div>

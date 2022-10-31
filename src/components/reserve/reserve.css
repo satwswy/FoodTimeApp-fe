@@ -12,15 +12,21 @@
 
 .rContainer {
   background-color: white;
-  padding: 20px;
+  padding: 50px;
   position: relative;
+  border-radius: 5px;
 }
-
+.rContainer span{
+  font-size: 2.5rem;
+  font-family: 'Fuzzy Bubbles', cursive
+}
 .rClose {
   position: absolute;
   top: 0;
   right: 0;
   cursor: pointer;
+  height: 35px;
+  color: rgb(47, 58, 54);
 }
 
 .rItem {
@@ -38,14 +44,18 @@
 
 .rTitle {
   font-weight: 500;
+  font-size: 1.5rem;
+  font-family: 'Inconsolata', monospace;
 }
 
 .rDesc {
   font-weight: 300;
+  font-size: 1.2rem;
+  font-family: 'Inconsolata', monospace;
 }
 
 .rMax {
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 .rPrice {
@@ -63,6 +73,12 @@
 .table{
   display: flex;
   flex-direction: column;
+}
+.table label{
+  font-size: 1.1rem;
+}
+.table input{
+  height: 20px;
 }
 
 
