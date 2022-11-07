@@ -25,7 +25,7 @@ const Restaurant = () => {
   const navigate = useNavigate();
 
   const {dates, options} = useContext(SearchContext)
- console.log(data.photos)
+
   const photos = [
     {
       src: "https://www.dome-restaurant.com/gallery/Images/gallery/gal4.jpg",
