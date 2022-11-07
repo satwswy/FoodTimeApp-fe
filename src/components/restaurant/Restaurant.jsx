@@ -25,7 +25,7 @@ const Restaurant = () => {
   const navigate = useNavigate();
 
   const {dates, options} = useContext(SearchContext)
- 
+ console.log(data.photos)
   const photos = [
     {
       src: "https://www.dome-restaurant.com/gallery/Images/gallery/gal4.jpg",
@@ -86,7 +86,7 @@ const Restaurant = () => {
               onClick={() => handleMove("l")}
             />
             <div className="sliderWrapper">
-              <img src={photos[slideNumber].src} alt="" className="sliderImg" />
+              <img src={data.photos[slideNumber].src} alt="" className="sliderImg" />
             </div>
             <FontAwesomeIcon
               icon={faCircleArrowRight}
@@ -108,11 +108,11 @@ const Restaurant = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </span>
           <div className="restaurantImages">
-            {photos.map((photo, i) => (
+            {data.photos && data.photos.map((photo, i) => (
               <div className="restaurantImgWrapper" key={i}>
                 <img
                   onClick={() => handleOpen(i)}
-                  src={photo.src}
+                  src={photo}
                   alt=""
                   className="restaurantImg"
                 />
