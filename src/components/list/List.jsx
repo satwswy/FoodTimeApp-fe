@@ -29,6 +29,8 @@ const List = () => {
     updateSearch()
   }, [city, type])
 
+  console.log(data)
+
   const updateSearch = () => {
     let searchUrl = '/restaurants'
     // check if city is not empty
