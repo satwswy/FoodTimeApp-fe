@@ -12,7 +12,7 @@ const List = () => {
   const [type, setType] = useState([location.state.type ? location.state.type : '']);
   const [dates, setDates] = useState(location.state.dates);
   const [options, setOptions] = useState(location.state.options);
-  const [fetchUrl, setFetchUrl] = useState('/restaurants')
+  const [fetchUrl, setFetchUrl] = useState('https://foodtime-api.onrender.com/api/restaurants')
 
  
   // if (city && type[0] === '' && type.length === 1) {
@@ -31,7 +31,7 @@ const List = () => {
 
 
   const updateSearch = () => {
-    let searchUrl = '/restaurants'
+    let searchUrl = 'https://foodtime-api.onrender.com/api/restaurants'
     // check if city is not empty
     if (city && type[0]==='' && type.length === 1) {
       searchUrl = searchUrl + '?city=' + city

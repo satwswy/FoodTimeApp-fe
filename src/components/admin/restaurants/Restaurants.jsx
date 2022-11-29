@@ -13,7 +13,7 @@ const Restaurants = () => {
 
     const { user } = useContext(AuthContext);
     const id = user._id
-    const { data, loading, error, reFetch } = useFetch(`/users/rest/${id}`)
+    const { data, loading, error, reFetch } = useFetch(`https://foodtime-api.onrender.com/api/users/rest/${id}`)
     const [name, setName] = useState("");
     const [city, setCity] = useState("");
     const [type, setType] = useState("");
@@ -48,7 +48,7 @@ const Restaurants = () => {
             if (type) data.type = type;
             if (address) data.address = address
             if (desc) data.desc = desc
-            await axios.put(`/restaurants/${id}`, data);
+            await axios.put(`https://foodtime-api.onrender.com/api/restaurants/${id}`, data);
         } catch (error) {
             console.log(error)
         }

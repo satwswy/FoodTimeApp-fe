@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 const Reserve = ({ setOpen, restaurantId }) => {
   const [selectedTables, setSelectedTables] = useState([]);
-  const { data, loading, error } = useFetch(`/restaurants/table/${restaurantId}`);
+  const { data, loading, error } = useFetch(`https://foodtime-api.onrender.com/api/restaurants/table/${restaurantId}`);
   const { dates } = useContext(SearchContext);
 
 console.log('DATE SEARCHED: ', typeof dates)
@@ -31,7 +31,7 @@ console.log('DATE SEARCHED: ', typeof dates)
     try {
       await Promise.all(
         selectedTables.map((tableId) => {
-          const res = axios.put(`/tables/availability/${tableId}`, {
+          const res = axios.put(`https://foodtime-api.onrender.com/api/tables/availability/${tableId}`, {
             dates: dates,
           });
           return res.data;

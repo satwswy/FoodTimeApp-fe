@@ -10,7 +10,7 @@ const Reservations = () => {
 
     const location = useLocation();
     const [restaurant, setRestaurant] = useState(location.state.restaurantId);
-    const { data, loading, error, reFetch } = useFetch(`/restaurants/reservations/${restaurant}`)
+    const { data, loading, error, reFetch } = useFetch(`https://foodtime-api.onrender.com/api/restaurants/reservations/${restaurant}`)
 
 
     return (

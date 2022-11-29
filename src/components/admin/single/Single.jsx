@@ -12,7 +12,7 @@ import { AuthContext } from "../../../context/AuthContext";
 const Single = () => {
   const { user } = useContext(AuthContext);
   const id = user._id
-  const { data, loading, error, reFetch } = useFetch(`/users/${id}`)
+  const { data, loading, error, reFetch } = useFetch(`https://foodtime-api.onrender.com/api/users/${id}`)
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -39,7 +39,7 @@ const Single = () => {
       if (username) data.username = username;
       if (email) data.email = email;
       if (age) data.age = age
-      await axios.put(`/users/${id}`, data);
+      await axios.put(`https://foodtime-api.onrender.com/api/users/${id}`, data);
     } catch (error) {
       console.log(error)
     }

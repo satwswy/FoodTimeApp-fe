@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import useFetch from '../../../hooks/useFetch';
 const Location = () => {
 
-    const { data, loading, error, } = useFetch("/restaurants/countByCity?cities=athens,thessaloniki,patra,xanthi,veria")
+    const { data, loading, error, } = useFetch("https://foodtime-api.onrender.com/api/restaurants/countByCity?cities=athens,thessaloniki,patra,xanthi,veria")
 
     const navigate = useNavigate();
 

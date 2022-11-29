@@ -3,7 +3,7 @@ import "./recent.css"
 import useFetch from "../../../hooks/useFetch"
 
 const Recent = () => {
-    const { data, loading, error, } = useFetch("/restaurants")
+    const { data, loading, error, } = useFetch("https://foodtime-api.onrender.com/api/restaurants")
     const recentData = data.slice(0, 5)
 
     return (

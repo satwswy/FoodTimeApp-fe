@@ -29,7 +29,7 @@ const Tables = () => {
     const fetchUsers = async () => {
         try {
             const response =
-                await fetch(`http://localhost:8800/api/restaurants/table/${params.id}`, {
+                await fetch(`https://foodtime-api.onrender.com/api/restaurants/table/${params.id}`, {
                     method: 'GET',
                     headers: {
                         "Content-Type": "application/json",
@@ -64,7 +64,7 @@ const Tables = () => {
             if (title) data.title = title;
             if (maxPeople) data.maxPeople = maxPeople;
             if (desc) data.desc = desc
-            await axios.put(`/tables/${id2}`, data);
+            await axios.put(`https://foodtime-api.onrender.com/api/tables/${id2}`, data);
         } catch (error) {
             console.log(error)
         }

@@ -4,7 +4,7 @@ import useFetch from "../../../hooks/useFetch"
 import './Featured.css'
 const FeaturedCard = () => {
   const navigate = useNavigate();
-  const { data, loading, error, } = useFetch("/restaurants/countByType")
+  const { data, loading, error, } = useFetch("https://foodtime-api.onrender.com/api/restaurants/countByType")
   const images = [
     "https://cdn-icons-png.flaticon.com/512/3132/3132693.png",
     "https://cdn.iconscout.com/icon/premium/png-256-thumb/food-time-3970087-3282549.png",
