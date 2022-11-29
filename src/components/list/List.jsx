@@ -14,7 +14,7 @@ const List = () => {
   const [options, setOptions] = useState(location.state.options);
   const [fetchUrl, setFetchUrl] = useState('/restaurants')
 
-  console.log(fetchUrl)
+ 
   // if (city && type[0] === '' && type.length === 1) {
   //   searchUrl = searchUrl + '?city=' + city
   // }if (city && type[0] !== '' && type.length === 1) {
