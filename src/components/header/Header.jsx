@@ -67,7 +67,7 @@ const Header = () => {
               to="/"
               className="nav-links"
             >
-              Contact Us
+              Contact
             </NavLink>
           </div>
           {!user && <> <div className="nav-item">
