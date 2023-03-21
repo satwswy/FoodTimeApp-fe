@@ -14,17 +14,19 @@ import { AuthContext } from "../../context/AuthContext";
 import Reserve from "../reserve/Reserve";
 import { Helmet } from "react-helmet-async";
 const Restaurant = () => {
-  const location = useLocation()
+  const location = useLocation();
   const id = location.pathname.split("/")[2];
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-  const {data, loading, error, reFetch} = useFetch(`https://foodtime-api.onrender.com/api/restaurants/find/${id}`)
+  const { data, loading, error, reFetch } = useFetch(
+    `https://foodtime-api.onrender.com/api/restaurants/find/${id}`
+  );
 
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const {dates, options} = useContext(SearchContext)
+  const { dates, options } = useContext(SearchContext);
 
   const photos = [
     {
@@ -61,7 +63,7 @@ const Restaurant = () => {
       newSlideNumber = slideNumber === 5 ? 0 : slideNumber + 1;
     }
 
-    setSlideNumber(newSlideNumber)
+    setSlideNumber(newSlideNumber);
   };
   const handleClick = () => {
     if (user) {
@@ -71,78 +73,101 @@ const Restaurant = () => {
     }
   };
   return (
-    <>      <Helmet>
-    <title>{data.name} - FoodTime</title>
-    <meta
-      name="description"
-      content={`Check out ${data.name} and reserve a table now.`}
-    />
-  </Helmet>
-    <div>
-      {loading?"loading" : <div className="restaurantContainer">
-        {open && (
-          <div className="slider">
-            <FontAwesomeIcon
-              icon={faCircleXmark}
-              className="close"
-              onClick={() => setOpen(false)}
-            />
-            <FontAwesomeIcon
-              icon={faCircleArrowLeft}
-              className="arrow"
-              onClick={() => handleMove("l")}
-            />
-            <div className="sliderWrapper">
-              <img src={data.photos[slideNumber]} alt="" className="sliderImg" />
-            </div>
-            <FontAwesomeIcon
-              icon={faCircleArrowRight}
-              className="arrow"
-              onClick={() => handleMove("r")}
-            />
-          </div>
-        )}
-        <div className="restaurantWrapper">
-          <h1 className="restaurantTitle">{data.name}</h1>
-          <div className="restaurantAddress">
-            <FontAwesomeIcon icon={faLocationDot} />
-            <span>{data.address}</span>
-          </div>
-          <span className="restaurantDistance">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          </span>
-          <span className="restaurantPriceHighlight">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </span>
-          <div className="restaurantImages">
-            {data.photos && data.photos.map((photo, i) => (
-              <div className="restaurantImgWrapper" key={i}>
-                <img
-                  onClick={() => handleOpen(i)}
-                  src={photo}
-                  alt=""
-                  className="restaurantImg"
+    <>
+      {" "}
+      <Helmet>
+        <title>{data.name ? `${data.name} - FoodTime` : "FoodTime"}</title>
+        <meta
+          name="description"
+          content={`Check out ${data.name} and reserve a table now.`}
+        />
+      </Helmet>
+      <div>
+        {loading ? (
+          "loading"
+        ) : (
+          <div className="restaurantContainer">
+            {open && (
+              <div className="slider">
+                <FontAwesomeIcon
+                  icon={faCircleXmark}
+                  className="close"
+                  onClick={() => setOpen(false)}
+                />
+                <FontAwesomeIcon
+                  icon={faCircleArrowLeft}
+                  className="arrow"
+                  onClick={() => handleMove("l")}
+                />
+                <div className="sliderWrapper">
+                  <img
+                    src={data.photos[slideNumber]}
+                    alt=""
+                    className="sliderImg"
+                  />
+                </div>
+                <FontAwesomeIcon
+                  icon={faCircleArrowRight}
+                  className="arrow"
+                  onClick={() => handleMove("r")}
                 />
               </div>
-            ))}
-          </div>
-          <div className="restaurantDetails">
-            <div className="restaurantDetailsTexts">
-              <h1 className="restaurantTitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h1>
-              <p className="restaurantDesc">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis, qui tempora neque, quia aut repellendus amet natus ab impedit quasi esse ut, quod sapiente? Minus voluptates molestias corporis provident beatae!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias rerum id ab magnam pariatur corporis? Vitae fugiat eaque neque ex aperiam voluptatum. Fuga, maxime. A voluptatibus cupiditate ut fugiat iste.
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis mollitia accusamus, unde suscipit, ipsam laudantium laboriosam minus, ea deserunt aliquid maxime vel explicabo? Eaque sunt fugit veniam, accusantium cum fuga.
-              </p>
+            )}
+            <div className="restaurantWrapper">
+              <h1 className="restaurantTitle">{data.name}</h1>
+              <div className="restaurantAddress">
+                <FontAwesomeIcon icon={faLocationDot} />
+                <span>{data.address}</span>
+              </div>
+              <span className="restaurantDistance">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              </span>
+              <span className="restaurantPriceHighlight">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </span>
+              <div className="restaurantImages">
+                {data.photos &&
+                  data.photos.map((photo, i) => (
+                    <div className="restaurantImgWrapper" key={i}>
+                      <img
+                        onClick={() => handleOpen(i)}
+                        src={photo}
+                        alt=""
+                        className="restaurantImg"
+                      />
+                    </div>
+                  ))}
+              </div>
+              <div className="restaurantDetails">
+                <div className="restaurantDetailsTexts">
+                  <h1 className="restaurantTitle">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  </h1>
+                  <p className="restaurantDesc">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Omnis, qui tempora neque, quia aut repellendus amet natus ab
+                    impedit quasi esse ut, quod sapiente? Minus voluptates
+                    molestias corporis provident beatae! Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Alias rerum id ab magnam
+                    pariatur corporis? Vitae fugiat eaque neque ex aperiam
+                    voluptatum. Fuga, maxime. A voluptatibus cupiditate ut
+                    fugiat iste. Lorem ipsum dolor sit, amet consectetur
+                    adipisicing elit. Officiis mollitia accusamus, unde
+                    suscipit, ipsam laudantium laboriosam minus, ea deserunt
+                    aliquid maxime vel explicabo? Eaque sunt fugit veniam,
+                    accusantium cum fuga.
+                  </p>
+                </div>
+                <div className="restaurantDetailsPrice">
+                  <button onClick={handleClick}>Reserve or Book Now!</button>
+                </div>
+              </div>
             </div>
-            <div className="restaurantDetailsPrice">
-              <button onClick={handleClick}>Reserve or Book Now!</button>
-            </div>
           </div>
-        </div>
-      </div>}
-      {openModal && <Reserve setOpen={setOpenModal} restaurantId={id}/>}
-    </div></>
+        )}
+        {openModal && <Reserve setOpen={setOpenModal} restaurantId={id} />}
+      </div>
+    </>
   );
 };
 
