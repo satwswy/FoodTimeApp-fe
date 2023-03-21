@@ -12,7 +12,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
 import Reserve from "../reserve/Reserve";
-
+import { Helmet } from "react-helmet-async";
 const Restaurant = () => {
   const location = useLocation()
   const id = location.pathname.split("/")[2];
