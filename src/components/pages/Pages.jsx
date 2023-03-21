@@ -14,6 +14,7 @@ import Single from "../../components/admin/single/Single";
 import Restaurants from "../../components/admin/restaurants/Restaurants";
 import Tables from "../../components/admin/tables/Tables";
 import Reservations from "../../components/admin/reservations/Reservations";
+import { HelmetProvider } from "react-helmet-async";
 const Pages = () => {
   const { darkMode } = useContext(DarkModeContext);
 
@@ -26,8 +27,10 @@ const Pages = () => {
 
     return children;
   };
+  const helmetContext = {};
   return (
     <>
+    <HelmetProvider context={helmetContext}>
       <div className={darkMode ? "app dark" : "app"}>
         <Router>
           <Header />
@@ -83,6 +86,7 @@ const Pages = () => {
           </Routes>
         </Router>
       </div>
+      </HelmetProvider>
     </>
   )
 }

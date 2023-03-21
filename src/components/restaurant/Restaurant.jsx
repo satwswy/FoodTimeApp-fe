@@ -71,6 +71,13 @@ const Restaurant = () => {
     }
   };
   return (
+    <>      <Helmet>
+    <title>{data.name} - FoodTime</title>
+    <meta
+      name="description"
+      content={`Check out ${data.name} and reserve a table now.`}
+    />
+  </Helmet>
     <div>
       {loading?"loading" : <div className="restaurantContainer">
         {open && (
@@ -135,7 +142,7 @@ const Restaurant = () => {
         </div>
       </div>}
       {openModal && <Reserve setOpen={setOpenModal} restaurantId={id}/>}
-    </div>
+    </div></>
   );
 };
 
